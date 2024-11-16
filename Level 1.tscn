@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bout6miw5ehfa"]
+[gd_scene load_steps=15 format=3 uid="uid://bout6miw5ehfa"]
 
 [ext_resource type="PackedScene" uid="uid://cxvoxrhrd65r8" path="res://player.tscn" id="1_g5qxa"]
-[ext_resource type="Script" path="res://DieArea.cs" id="1_yp5nn"]
+[ext_resource type="Script" path="res://DieScripts/BottomDieArea.cs" id="1_yp5nn"]
 [ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Mats-Images/PlatMat.tres" id="2_1sxb2"]
+[ext_resource type="Script" path="res://DieScripts/P202D.cs" id="3_0wmb0"]
 [ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://Mats-Images/DieMat.tres" id="3_1vyqb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ha2tp"]
@@ -136,6 +137,7 @@ mesh = SubResource("BoxMesh_mcftv")
 [node name="P2-02-D" type="Area3D" parent="PlatSec2"]
 transform = Transform3D(5.434, 0, 0, 0, 0.184603, 0, 0, 0, 1, -1, 5, -23)
 collision_layer = 8
+script = ExtResource("3_0wmb0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-02-D"]
 transform = Transform3D(1, 0, 0, 0, 2.025, 0, 0, 0, 3.4, 0, -2.22222, 0)
