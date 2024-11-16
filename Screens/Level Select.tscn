@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://c3dd7eprms3p5"]
+[gd_scene load_steps=3 format=3 uid="uid://c3dd7eprms3p5"]
+
+[ext_resource type="Script" path="res://Scripts/LevelSelect.cs" id="1_6x1f5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k47r3"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -7,3 +11,43 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6x1f5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0.286275, 0.768627, 0.882353, 1)
+
+[node name="ChoseL" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1135.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 60
+text = "Chose Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 188.0
+offset_right = 784.0
+offset_bottom = 327.0
+theme_override_colors/font_disabled_color = Color(0.286275, 0.768627, 0.882353, 1)
+theme_override_colors/icon_normal_color = Color(0.286275, 0.768627, 0.882353, 1)
+theme_override_colors/icon_disabled_color = Color(0.286275, 0.768627, 0.882353, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k47r3")
+text = "Level 1"
+
+[node name="LevelsUnlLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 74.0
+offset_right = 762.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 20
+text = "Levels Unlocked: Error"
+
+[connection signal="pressed" from="L1" to="." method="_on_l_1_pressed"]
