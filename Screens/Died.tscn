@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://daydeo3jw20d8"]
+[gd_scene load_steps=4 format=3 uid="uid://daydeo3jw20d8"]
+
+[ext_resource type="Script" path="res://Scripts/DieButtons.cs" id="1_4e78m"]
 
 [sub_resource type="Theme" id="Theme_0nw46"]
 
@@ -13,6 +15,7 @@ offset_bottom = 207.472
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0nw46")
+script = ExtResource("1_4e78m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -43,7 +46,7 @@ offset_top = 234.0
 offset_right = 805.0
 offset_bottom = 325.0
 theme_override_font_sizes/font_size = 40
-text = "Level Select*"
+text = "Level Select"
 
 [node name="MenuButton" type="Button" parent="."]
 material = SubResource("ShaderMaterial_hlwtm")
@@ -54,3 +57,6 @@ offset_right = 808.0
 offset_bottom = 480.0
 theme_override_font_sizes/font_size = 40
 text = "Menu"
+
+[connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

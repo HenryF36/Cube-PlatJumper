@@ -52,6 +52,13 @@ jump={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_1="Player"
+3d_render/layer_2="Start"
+3d_render/layer_3="Platform"
+3d_render/layer_4="Die"
+
 [rendering]
 
 renderer/rendering_method="mobile"
