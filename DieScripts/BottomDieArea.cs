@@ -1,7 +1,8 @@
 using Godot;
 using System;
 
-public partial class DieArea : Area3D
+
+public partial class BottomDieArea : Area3D
 {
 	public override void _Ready()
 	{
@@ -16,7 +17,7 @@ public partial class DieArea : Area3D
 		{
 			// Call a function when the player collides with Object4
 			GD.Print("Player collided with DieArea");
-			GetTree().ChangeSceneToFile("res://Died.tscn");
+			GetTree().ChangeSceneToFile("res://Screens/Died.tscn");
 			GD.Print("Scene Changed.");
 		}
 	}
