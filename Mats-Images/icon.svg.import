@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://islarpc4d1a"
-path="res://.godot/imported/HF Code Favicon.png-8467a374f2b767f0659e5ea1e618b0fd.ctex"
+uid="uid://d4fxbgj7gwivt"
+path="res://.godot/imported/icon.svg-a2f90ba56f9759e0b216de3e471bff8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://HF Code Favicon.png"
-dest_files=["res://.godot/imported/HF Code Favicon.png-8467a374f2b767f0659e5ea1e618b0fd.ctex"]
+source_file="res://Mats-Images/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-a2f90ba56f9759e0b216de3e471bff8b.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
