@@ -58,6 +58,8 @@ jump={
 3d_render/layer_2="Start"
 3d_render/layer_3="Platform"
 3d_render/layer_4="Die"
+3d_render/layer_5="P1 Only"
+3d_render/layer_6="P2 Only"
 
 [rendering]
 

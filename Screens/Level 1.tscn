@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bout6miw5ehfa"]
+[gd_scene load_steps=14 format=3 uid="uid://bout6miw5ehfa"]
 
-[ext_resource type="Script" path="res://DieScripts/BottomDieArea.cs" id="1_hckmv"]
+[ext_resource type="Script" path="res://Scripts/StandardDie.cs" id="1_cjbas"]
 [ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Mats-Images/PlatMat.tres" id="2_l47l1"]
-[ext_resource type="Script" path="res://DieScripts/P202D.cs" id="3_5vbki"]
 [ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://Mats-Images/DieMat.tres" id="4_t1hca"]
 [ext_resource type="PackedScene" uid="uid://cxvoxrhrd65r8" path="res://player.tscn" id="5_pahmd"]
 
@@ -68,7 +67,7 @@ shape = SubResource("BoxShape3D_ha2tp")
 [node name="BottomDieArea" type="Area3D" parent="Invisable Forces"]
 transform = Transform3D(-82.1475, 0, 0, 0, 0.1, 0, 0, 0, 6.5, -4, -11, -20)
 collision_layer = 8
-script = ExtResource("1_hckmv")
+script = ExtResource("1_cjbas")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="Invisable Forces/BottomDieArea"]
 transform = Transform3D(5.04, 0, 0, 0, 2.4, 0, 0, 0, 29.9283, 0, 2.4272, -5.84391)
@@ -123,7 +122,7 @@ shape = SubResource("BoxShape3D_vee7a")
 [node name="PlatSec2" type="Node3D" parent="."]
 
 [node name="P2-01" type="StaticBody3D" parent="PlatSec2"]
-transform = Transform3D(1.1, 0, 0, 0, 1.69, 0, 0, 0, 9.31, 1, 4.3, -20)
+transform = Transform3D(1.1, 0, 0, 0, 1.69, 0, 0, 0, 6.517, 0, 3.3, -18)
 collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-01"]
@@ -135,9 +134,9 @@ transform = Transform3D(4.3095, 0, 0, 0, 0.3, 0, 0, 0, 2.8, -0.909091, -2.38419e
 mesh = SubResource("BoxMesh_mcftv")
 
 [node name="P2-02-D" type="Area3D" parent="PlatSec2"]
-transform = Transform3D(5.434, 0, 0, 0, 0.184603, 0, 0, 0, 1, 0, 5, -23)
+transform = Transform3D(5.434, 0, 0, 0, 0.184603, 0, 0, 0, 1, 1, 5, -23)
 collision_layer = 8
-script = ExtResource("3_5vbki")
+script = ExtResource("1_cjbas")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-02-D"]
 transform = Transform3D(1, 0, 0, 0, 2.025, 0, 0, 0, 3.4, 0, -2.22222, 0)
