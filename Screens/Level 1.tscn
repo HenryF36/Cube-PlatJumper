@@ -152,12 +152,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6.3, -29)
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("5_pahmd")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, -3)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, -3)
 collision_mask = 15
 
 [node name="CameraPivot2" type="Marker3D" parent="Player"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -20, 100)
 
 [node name="CameraMain" type="Camera3D" parent="Player/CameraPivot2"]
-transform = Transform3D(0.625, 4.39977e-16, 2.73196e-08, -1.93179e-08, 0.441942, 0.441942, -1.93179e-08, -0.441942, 0.441942, -0.74501, 5.47181, -0.611249)
+transform = Transform3D(1, 1.37249e-14, 4.37114e-08, -3.09086e-08, 0.707107, 0.707107, -3.09086e-08, -0.707107, 0.707107, -0.74501, 8.47181, -0.611249)
 fov = 71.2798
