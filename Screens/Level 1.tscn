@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bout6miw5ehfa"]
+[gd_scene load_steps=22 format=3 uid="uid://bout6miw5ehfa"]
 
 [ext_resource type="Script" path="res://Scripts/StandardDie.cs" id="1_cjbas"]
 [ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Mats-Images/PlatMat.tres" id="2_l47l1"]
 [ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://Mats-Images/DieMat.tres" id="4_t1hca"]
-[ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Mats-Images/Trampoline.tres" id="5_cw75q"]
+[ext_resource type="Script" path="res://Scripts/P205T.cs" id="5_b3dr3"]
+[ext_resource type="Material" path="res://Mats-Images/Trampoline.tres" id="5_cw75q"]
 [ext_resource type="PackedScene" uid="uid://cxvoxrhrd65r8" path="res://player.tscn" id="5_pahmd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ha2tp"]
@@ -196,8 +197,12 @@ shape = SubResource("BoxShape3D_hxdvv")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-04"]
 mesh = SubResource("BoxMesh_5oo6l")
 
-[node name="P2-05-T" type="Area3D" parent="PlatSec2"]
+[node name="P2-05-T" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("p")]
 transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 6, -42)
+collision_layer = 4
+script = ExtResource("5_b3dr3")
+p = NodePath("../../Player-E")
+targetPosition = Vector3(0, 5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-05-T"]
 shape = SubResource("BoxShape3D_atagc")
