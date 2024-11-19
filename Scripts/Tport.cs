@@ -5,7 +5,7 @@ public partial class P205T : Area3D
 {
 	// Exported variable to assign a reference to the player
 	[Export]
-	public CharacterBody3D p;
+	public CharacterBody3D Thing;
 	[Export]
 	public Vector3  targetPosition;
 
@@ -26,11 +26,11 @@ public partial class P205T : Area3D
 		if (body is Player)
 		{
 			// Call a function when the player collides with Object4
-			GD.Print("Player collided with P2-05-T");
+			GD.Print("Player collided with Trampoline");
 
 			// Example: You can now access the 'p' reference (player) and manipulate it
 			// Set the player's GlobalTransform to the new position with the same basis (rotation and scale)
-			p.GlobalTransform = new Transform3D(p.GlobalTransform.Basis, targetPosition);
+			Thing.GlobalTransform = new Transform3D(Thing.GlobalTransform.Basis, targetPosition);
 		
 		}
 	}
