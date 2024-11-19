@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://hau40m3c0on3" path="res://Player.glb" id="2_pubdo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x8oam"]
+size = Vector3(30, 57, 30)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-collision_mask = 7
+collision_mask = 15
 script = ExtResource("1_l2yqv")
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -15,4 +16,5 @@ script = ExtResource("1_l2yqv")
 [node name="Tinkercad GLTF Scene" parent="Pivot" instance=ExtResource("2_pubdo")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 28, 8.0005)
 shape = SubResource("BoxShape3D_x8oam")

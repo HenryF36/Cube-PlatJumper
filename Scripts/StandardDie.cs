@@ -3,6 +3,8 @@ using System;
 
 public partial class StandardDie : Area3D
 {
+	[Export]
+	public string Nm;
 	public override void _Ready()
 	{
 		// Connect the body_entered signal to a function
@@ -15,7 +17,7 @@ public partial class StandardDie : Area3D
 		if (body is Player)
 		{
 			// Call a function when the player collides with Object4
-			GD.Print("Player collided with a death substance");
+			GD.Print("Player collided with " + Nm);
 			GetTree().ChangeSceneToFile("res://Screens/Died.tscn");
 			GD.Print("Scene Changed.");
 		}

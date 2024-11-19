@@ -9,6 +9,8 @@ public partial class Tport : Area3D
 	[Export]
 	//public Vector3  targetPosition;
 	public Marker3D Destination;
+	[Export]
+	public string Name;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,7 +28,7 @@ public partial class Tport : Area3D
 		// Check if the body that entered is the player
 		if (body is Player && Thing != null && Destination != null)
 		{
-			GD.Print("Player collided with Trampoline");
+			GD.Print("Player collided with " + Name);
 
 			// Update Thing's GlobalTransform to the Destination's Origin
 			Thing.GlobalTransform = new Transform3D(Thing.GlobalTransform.Basis, Destination.GlobalTransform.Origin);
