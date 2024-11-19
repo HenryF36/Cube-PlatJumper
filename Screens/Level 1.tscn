@@ -90,7 +90,7 @@ transform = Transform3D(5.04, 0, 0, 0, 2.4, 0, 0, 0, 29.9283, 0, 2.4272, -5.8439
 shape = SubResource("BoxShape3D_ha2tp")
 
 [node name="Player-E" parent="." instance=ExtResource("5_pahmd")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, -3)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -55, 24, -65)
 collision_mask = 15
 
 [node name="CameraPivot2" type="Marker3D" parent="Player-E"]
@@ -224,3 +224,91 @@ mesh = SubResource("BoxMesh_mcftv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-01"]
 shape = SubResource("BoxShape3D_33nau")
+
+[node name="P3-02" type="StaticBody3D" parent="PlatSec3"]
+transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -12, 19, -58)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-02"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-02"]
+shape = SubResource("BoxShape3D_33nau")
+
+[node name="P3-03" type="StaticBody3D" parent="PlatSec3"]
+transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -18, 15, -63)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-03"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-03"]
+shape = SubResource("BoxShape3D_33nau")
+
+[node name="P3-04" type="StaticBody3D" parent="PlatSec3"]
+transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -27, 15, -68)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-04"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-04"]
+shape = SubResource("BoxShape3D_33nau")
+
+[node name="P3-05" type="StaticBody3D" parent="PlatSec3"]
+transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -32, 13, -67)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-05"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-05"]
+shape = SubResource("BoxShape3D_33nau")
+
+[node name="P3-06" type="StaticBody3D" parent="PlatSec3"]
+transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -37, 11, -68)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-06"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-06"]
+shape = SubResource("BoxShape3D_33nau")
+
+[node name="PlatSec4" type="Node3D" parent="."]
+
+[node name="P4-01" type="StaticBody3D" parent="PlatSec4"]
+transform = Transform3D(23.7722, 0, 0, 0, 0.464006, 0, 0, 0, 23.0008, -51.4518, 6.55, -67.8774)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec4/P4-01"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-01"]
+shape = SubResource("BoxShape3D_33nau")
+
+[node name="P4-02-I" type="StaticBody3D" parent="PlatSec4"]
+transform = Transform3D(21.0286, 0, 0, 0, 1.056, 0, 0, 0, 0.384722, -47.8843, 4.15, -54.3901)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-02-I"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 2.42719, -4.15095)
+shape = SubResource("BoxShape3D_ha2tp")
+
+[node name="P4-03-I" type="StaticBody3D" parent="PlatSec4"]
+transform = Transform3D(21.0286, 0, 0, 0, 1.056, 0, 0, 0, 0.384722, -47.8843, 4.15, -80.4502)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-03-I"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 2.42719, -4.15095)
+shape = SubResource("BoxShape3D_ha2tp")
+
+[node name="P4-04-I" type="StaticBody3D" parent="PlatSec4"]
+transform = Transform3D(7.38547e-07, 0, 0.419696, 0, 1.2672, 0, 16.896, 0, -1.83455e-08, -62.5483, 8.15, -69.2823)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-04-I"]
+shape = SubResource("BoxShape3D_ha2tp")

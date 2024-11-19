@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_l2yqv"]
 [ext_resource type="PackedScene" uid="uid://hau40m3c0on3" path="res://Player.glb" id="2_pubdo"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ukx1g"]
-size = Vector3(23, 46, 21)
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8oam"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
@@ -16,5 +15,4 @@ script = ExtResource("1_l2yqv")
 [node name="Tinkercad GLTF Scene" parent="Pivot" instance=ExtResource("2_pubdo")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, -1.5, 13.05, 10)
-shape = SubResource("BoxShape3D_ukx1g")
+shape = SubResource("BoxShape3D_x8oam")

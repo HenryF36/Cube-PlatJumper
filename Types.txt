@@ -12,3 +12,9 @@ Node Types:
 	I: InvisaWall
 	T: Trampoline
 	De: Trampline Destination
+PlatSec:
+	Level 1:
+		1: Start Steps
+		2: Ground Level Platform with big die
+		3: Platforms after trampoline leading to temple (4)
+		4: Temple with tp to P3-01
