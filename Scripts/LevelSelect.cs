@@ -18,7 +18,6 @@ public partial class LevelSelect : Control
 	{
 		
 		_label = GetNode<Label>("LevelsUnlLabel");
-		GD.Print("Curently says: " + _label.Text);
 		_label.Text = "Levels Unlocked: "+ LevelsUnlkd;
 		// TODO: This program has the levels unlocked thing, store it in a file latter so It will stay the same evry time it runs. Now it is using a static var.
 
