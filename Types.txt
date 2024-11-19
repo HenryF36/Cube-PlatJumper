@@ -10,3 +10,5 @@ Node Types:
 	E: Exterior
 	D: Death
 	I: InvisaWall
+	T: Trampoline
+	De: Trampline Destination

@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bout6miw5ehfa"]
+[gd_scene load_steps=22 format=3 uid="uid://bout6miw5ehfa"]
 
 [ext_resource type="Script" path="res://Scripts/StandardDie.cs" id="1_cjbas"]
 [ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Mats-Images/PlatMat.tres" id="2_l47l1"]
 [ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://Mats-Images/DieMat.tres" id="4_t1hca"]
+[ext_resource type="Script" path="res://Scripts/Tport.cs" id="5_b3dr3"]
+[ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Mats-Images/Trampoline.tres" id="5_cw75q"]
 [ext_resource type="PackedScene" uid="uid://cxvoxrhrd65r8" path="res://player.tscn" id="5_pahmd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ha2tp"]
@@ -38,6 +40,11 @@ size = Vector3(1, 1, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5oo6l"]
 material = ExtResource("2_l47l1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_atagc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rok3g"]
+material = ExtResource("5_cw75q")
 
 [node name="Root" type="Node3D"]
 
@@ -190,4 +197,30 @@ shape = SubResource("BoxShape3D_hxdvv")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-04"]
 mesh = SubResource("BoxMesh_5oo6l")
 
+[node name="P2-05-T" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("Thing", "Destination")]
+transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 6, -42)
+collision_layer = 4
+script = ExtResource("5_b3dr3")
+Thing = NodePath("../../Player-E")
+Destination = NodePath("P2-05-De")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-05-T"]
+shape = SubResource("BoxShape3D_atagc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-05-T"]
+mesh = SubResource("BoxMesh_rok3g")
+
+[node name="P2-05-De" type="Marker3D" parent="PlatSec2/P2-05-T"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.916, 0)
+
 [node name="PlatSec3" type="Node3D" parent="."]
+
+[node name="P3-01" type="StaticBody3D" parent="PlatSec3"]
+transform = Transform3D(7.0785, 0, 0, 0, 0.44616, 0, 0, 0, 16.8626, -4, 22, -55)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-01"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-01"]
+shape = SubResource("BoxShape3D_33nau")
