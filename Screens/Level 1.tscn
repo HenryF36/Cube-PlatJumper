@@ -197,12 +197,12 @@ shape = SubResource("BoxShape3D_hxdvv")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-04"]
 mesh = SubResource("BoxMesh_5oo6l")
 
-[node name="P2-05-T" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("p")]
+[node name="P2-05-T" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("Thing", "Destination")]
 transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 6, -42)
 collision_layer = 4
 script = ExtResource("5_b3dr3")
-p = NodePath("../../Player-E")
-targetPosition = Vector3(0, 10, 0)
+Thing = NodePath("../../Player-E")
+Destination = NodePath("../../PlatSec3/P2-05-De")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-05-T"]
 shape = SubResource("BoxShape3D_atagc")
@@ -211,3 +211,6 @@ shape = SubResource("BoxShape3D_atagc")
 mesh = SubResource("BoxMesh_rok3g")
 
 [node name="PlatSec3" type="Node3D" parent="."]
+
+[node name="P2-05-De" type="Marker3D" parent="PlatSec3"]
+transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 25, -42)

@@ -1,13 +1,14 @@
 using Godot;
 using System;
 
-public partial class P205T : Area3D
+public partial class Tport : Area3D
 {
 	// Exported variable to assign a reference to the player
 	[Export]
 	public CharacterBody3D Thing;
 	[Export]
-	public Vector3  targetPosition;
+	//public Vector3  targetPosition;
+	public Marker3D Destination;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -23,15 +24,16 @@ public partial class P205T : Area3D
 	private void OnBodyEntered(Node body)
 	{
 		// Check if the body that entered is the player
-		if (body is Player)
+		if (body is Player && Thing != null && Destination != null)
 		{
-			// Call a function when the player collides with Object4
 			GD.Print("Player collided with Trampoline");
 
-			// Example: You can now access the 'p' reference (player) and manipulate it
-			// Set the player's GlobalTransform to the new position with the same basis (rotation and scale)
-			Thing.GlobalTransform = new Transform3D(Thing.GlobalTransform.Basis, targetPosition);
-		
+			// Update Thing's GlobalTransform to the Destination's Origin
+			Thing.GlobalTransform = new Transform3D(Thing.GlobalTransform.Basis, Destination.GlobalTransform.Origin);
+		}
+		else
+		{
+			GD.Print("Collision detected with an unexpected node or Thing/Destination is not assigned.");
 		}
 	}
 }
