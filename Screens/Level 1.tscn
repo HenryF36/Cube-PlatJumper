@@ -202,7 +202,7 @@ transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 6, -42)
 collision_layer = 4
 script = ExtResource("5_b3dr3")
 Thing = NodePath("../../Player-E")
-Destination = NodePath("../../PlatSec3/P2-05-De")
+Destination = NodePath("P2-05-De")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-05-T"]
 shape = SubResource("BoxShape3D_atagc")
@@ -210,7 +210,17 @@ shape = SubResource("BoxShape3D_atagc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-05-T"]
 mesh = SubResource("BoxMesh_rok3g")
 
+[node name="P2-05-De" type="Marker3D" parent="PlatSec2/P2-05-T"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.916, 0)
+
 [node name="PlatSec3" type="Node3D" parent="."]
 
-[node name="P2-05-De" type="Marker3D" parent="PlatSec3"]
-transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 25, -42)
+[node name="P3-01" type="StaticBody3D" parent="PlatSec3"]
+transform = Transform3D(7.0785, 0, 0, 0, 0.44616, 0, 0, 0, 16.8626, -4, 22, -55)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-01"]
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-01"]
+shape = SubResource("BoxShape3D_33nau")
