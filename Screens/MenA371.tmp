@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4chxs7vvdcms"]
 
-[ext_resource type="Script" path="res://Scripts/MenuButtons.gd" id="1_236b0"]
+[ext_resource type="Script" path="res://Screens/menu.gd" id="1_vbfv4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6s2t"]
 
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_236b0")
+script = ExtResource("1_vbfv4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

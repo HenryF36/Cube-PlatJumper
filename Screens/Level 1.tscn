@@ -14,7 +14,7 @@ material = ExtResource("2_l47l1")
 size = Vector3(4, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ha2tp"]
-size = Vector3(2, 5.85437, 3)
+size = Vector3(1, 2, 2)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bebdl"]
 
@@ -23,8 +23,8 @@ size = Vector3(2, 5.85437, 3)
 [sub_resource type="BoxMesh" id="BoxMesh_p737p"]
 material = SubResource("ShaderMaterial_l3ujc")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lq7bl"]
-size = Vector3(5, 0.001, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctdsl"]
+size = Vector3(2, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_33nau"]
 
@@ -49,7 +49,7 @@ material = ExtResource("5_cw75q")
 [node name="Root" type="Node3D"]
 
 [node name="Player-E" parent="." instance=ExtResource("5_pahmd")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 5, 0)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -4.25, 26.65, -55.95)
 
 [node name="CameraPivot2" type="Marker3D" parent="Player-E"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -20, 100)
@@ -86,25 +86,28 @@ transform = Transform3D(1.1375, 0, 0, 0, 0.031213, 0, 0, 0, 0.6825, 0, 0.0187811
 shape = SubResource("BoxShape3D_vee7a")
 
 [node name="Right Orthaganal-I" type="StaticBody3D" parent="PlatSec1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07715, -1, 13)
+transform = Transform3D(1, 0, 0, 0, 2.25, 0, 0, 0, 1, 4.07715, -1, 12)
+visible = false
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/Right Orthaganal-I"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 2.42719, -4.15095)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 1.20447, -1.53246)
 shape = SubResource("BoxShape3D_ha2tp")
 
 [node name="Left Orthaganal-I" type="StaticBody3D" parent="PlatSec1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96685, -1, 13)
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 1, -3.96685, -1, 13)
+visible = false
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/Left Orthaganal-I"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 2.42719, -4.64176)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 5.54219, 0.6, 1.22719, -4.64176)
 shape = SubResource("BoxShape3D_ha2tp")
 
 [node name="Start Wall-I" type="StaticBody3D" parent="PlatSec1"]
 transform = Transform3D(5.6556, 0, 0, 0, 0.951405, 0, 0, 0, 0.0326451, 0.283901, 0, 15.6817)
+visible = false
 collision_layer = 2
 collision_mask = 3
 
@@ -118,9 +121,6 @@ collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_bebdl")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="PlatSec1/StartPlat"]
-transform = Transform3D(1, 0, 0, 0, 0.669779, 0.742561, 0, -0.742561, 0.669779, -1.42705, 1.22921, 0.0144086)
-
 [node name="FloorMesh" type="MeshInstance3D" parent="PlatSec1/StartPlat"]
 unique_name_in_owner = true
 transform = Transform3D(1.6, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
@@ -128,7 +128,8 @@ mesh = SubResource("BoxMesh_p737p")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/StartPlat"]
-shape = SubResource("BoxShape3D_lq7bl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.28991e-07)
+shape = SubResource("BoxShape3D_ctdsl")
 
 [node name="PlatSec2" type="Node3D" parent="."]
 
@@ -275,40 +276,37 @@ mesh = SubResource("BoxMesh_mcftv")
 shape = SubResource("BoxShape3D_33nau")
 
 [node name="P4-02-I" type="StaticBody3D" parent="PlatSec4"]
-transform = Transform3D(21.0286, 0, 0, 0, 1.056, 0, 0, 0, 0.384722, -47.8843, 4.15, -54.3901)
-visible = false
+transform = Transform3D(27.3372, 0, 0, 0, 2.60832, 0, 0, 0, 0.100028, -50.8843, 3.1436, -56.3901)
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-02-I"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 2.42719, -4.15095)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 2.42719, -31.8619)
 shape = SubResource("BoxShape3D_ha2tp")
 
 [node name="P4-03-I" type="StaticBody3D" parent="PlatSec4"]
-transform = Transform3D(21.0286, 0, 0, 0, 1.056, 0, 0, 0, 0.384722, -47.8843, 4.15, -80.4502)
-visible = false
+transform = Transform3D(21.0286, 0, 0, 0, 2.0064, 0, 0, 0, 0.115417, -49.8843, 5.15, -76.4494)
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-03-I"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, 0, 2.42719, -4.15095)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.61849, -0.0951085, 2.42719, -4.15094)
 shape = SubResource("BoxShape3D_ha2tp")
 
 [node name="P4-04-I" type="StaticBody3D" parent="PlatSec4"]
-transform = Transform3D(7.38547e-07, 0, 0.419696, 0, 1.2672, 0, 16.896, 0, -1.83455e-08, -62.5483, 8.15, -69.2823)
-visible = false
+transform = Transform3D(7.38547e-07, 0, 0.419696, 0, 1.2672, 0, 16.896, 0, -1.83455e-08, -62.5483, 9.15, -71.2823)
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-04-I"]
+transform = Transform3D(1.7, 0, 4.44089e-16, 0, 1.7, 0, -1.79625e-11, 0, 1.7, 0, 0, 0.850006)
 shape = SubResource("BoxShape3D_ha2tp")
 
 [node name="BottomDie-I,D" type="Area3D" parent="."]
-transform = Transform3D(-96.1126, 0, 0, 0, 0.1, 0, 0, 0, 14.56, -4, -31, -20)
+transform = Transform3D(-1.8744e+06, 0, 0, 0, 14.0415, 0, 0, 0, 283951, -5, -31, -4)
 collision_layer = 8
 script = ExtResource("1_cjbas")
 Nm = "BottomDie"
 
 [node name="CollisionShape" type="CollisionShape3D" parent="BottomDie-I,D"]
-transform = Transform3D(5.04, 0, 0, 0, 2.4, 0, 0, 0, 29.9283, 0, 2.4272, -5.84391)
 shape = SubResource("BoxShape3D_ha2tp")
