@@ -49,7 +49,7 @@ material = ExtResource("5_cw75q")
 [node name="Root" type="Node3D"]
 
 [node name="Player-E" parent="." instance=ExtResource("5_pahmd")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -4.25, 26.65, -55.95)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.3, 5.9, -6.55)
 
 [node name="CameraPivot2" type="Marker3D" parent="Player-E"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -20, 100)
@@ -124,6 +124,7 @@ physics_material_override = SubResource("PhysicsMaterial_bebdl")
 [node name="FloorMesh" type="MeshInstance3D" parent="PlatSec1/StartPlat"]
 unique_name_in_owner = true
 transform = Transform3D(1.6, 0, 0, 0, -0.1, 0, 0, 0, 1, 0, 0, 0)
+layers = 2
 mesh = SubResource("BoxMesh_p737p")
 skeleton = NodePath("")
 
@@ -171,10 +172,6 @@ mesh = SubResource("BoxMesh_m8lkr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999998, 0, 0, 0)
 shape = SubResource("BoxShape3D_aijkr")
 
-[node name="OmniLight1" type="OmniLight3D" parent="PlatSec2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6.3, -29)
-visible = false
-
 [node name="P2-04" type="StaticBody3D" parent="PlatSec2"]
 transform = Transform3D(5.04, 0, 0, 0, 0.2, 0, 0, 0, 12.2892, -4, 6, -38)
 
@@ -200,6 +197,13 @@ mesh = SubResource("BoxMesh_rok3g")
 
 [node name="P2-05-De" type="Marker3D" parent="PlatSec2/P2-05-T"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.916, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PlatSec2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 9, -2)
+layers = 4
+light_energy = 100.0
+light_cull_mask = 4294966278
+spot_range = 13.0
 
 [node name="PlatSec3" type="Node3D" parent="."]
 
@@ -310,3 +314,5 @@ Nm = "BottomDie"
 
 [node name="CollisionShape" type="CollisionShape3D" parent="BottomDie-I,D"]
 shape = SubResource("BoxShape3D_ha2tp")
+
+[editable path="Player-E"]
