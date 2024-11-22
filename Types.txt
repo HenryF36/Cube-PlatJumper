@@ -6,7 +6,6 @@ Masks:
 	5: Player 1 Only *
 	6: Player 2 Only *
 Node Types:
-	P or none: Platform Standard
 	E: Exterior
 	D: Death
 	I: InvisaWall
