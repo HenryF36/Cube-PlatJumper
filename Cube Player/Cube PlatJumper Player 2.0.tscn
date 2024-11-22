@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://vgqxk8eyd1j1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbsb2"]
+albedo_color = Color(0.172705, 0.248082, 0.706563, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_is636"]
+material = SubResource("StandardMaterial3D_hbsb2")
+
+[node name="Cube PlatJumper Player 2_0" type="Node3D"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Ball" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("SphereMesh_is636")
