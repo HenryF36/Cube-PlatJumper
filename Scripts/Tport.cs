@@ -5,7 +5,7 @@ public partial class Tport : Area3D
 {
 	// Exported variable to assign a reference to the player
 	[Export]
-	public CharacterBody3D Thing;
+	public CharacterBody3D Subj;
 	[Export]
 	//public Vector3  targetPosition;
 	public Marker3D Destination;
@@ -26,12 +26,12 @@ public partial class Tport : Area3D
 	private void OnBodyEntered(Node body)
 	{
 		// Check if the body that entered is the player
-		if (body is Player && Thing != null && Destination != null)
+		if (body is Player && Subj != null && Destination != null)
 		{
 			GD.Print("Player collided with " + Name);
 
 			// Update Thing's GlobalTransform to the Destination's Origin
-			Thing.GlobalTransform = new Transform3D(Thing.GlobalTransform.Basis, Destination.GlobalTransform.Origin);
+			Subj.GlobalTransform = new Transform3D(Subj.GlobalTransform.Basis, Destination.GlobalTransform.Origin);
 		}
 		else
 		{

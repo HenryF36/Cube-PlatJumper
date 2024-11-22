@@ -53,6 +53,7 @@ size = Vector3(1, 2, 2)
 [node name="Root" type="Node3D"]
 
 [node name="Player-E" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 24, -52)
 collision_mask = 15
 script = ExtResource("1_f4io2")
 
@@ -90,6 +91,7 @@ shape = SubResource("BoxShape3D_vee7a")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlatSec1/P1-01"]
 transform = Transform3D(1, 0, 0, 0, 0.769231, 0, 0, 0, 1, 1, 2, -1)
+visible = false
 layers = 4
 light_energy = 8.0
 light_cull_mask = 4294967294
@@ -133,12 +135,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.28991e-07)
 shape = SubResource("BoxShape3D_ctdsl")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PlatSec1/StartPlat"]
-transform = Transform3D(0.21978, 0, 0, 0, -4.37114e-08, 1, 0, -0.0693188, -3.03002e-09, 0.21978, 9, -0.138638)
+transform = Transform3D(0.21978, 0, 0, 0, -4.37114e-08, 1, 0, -0.0693188, -3.03002e-09, 0.21978, 9, -1.49012e-08)
 layers = 4
 light_energy = 100.0
 light_bake_mode = 0
 light_cull_mask = 4293950494
 spot_range = 13.0
+spot_angle = 53.1168
 
 [node name="PlatSec2" type="Node3D" parent="."]
 
@@ -152,6 +155,20 @@ mesh = SubResource("BoxMesh_mcftv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-01"]
 shape = SubResource("BoxShape3D_33nau")
+
+[node name="P2-01-01-O" type="OmniLight3D" parent="PlatSec2/P2-01"]
+transform = Transform3D(0.211909, 0, 0, 0, 2.24135, 0, 0, 0, 0.0576425, 0.211909, 3.81029, 0.345855)
+layers = 4
+light_energy = 8.0
+light_cull_mask = 4294967294
+omni_range = 8.0
+
+[node name="P2-01-02-O" type="OmniLight3D" parent="PlatSec2/P2-01"]
+transform = Transform3D(0.211909, 0, 0, 0, 2.24135, 0, 0, 0, 0.0576425, 0.211909, 3.81029, -0.345855)
+layers = 4
+light_energy = 8.0
+light_cull_mask = 4294967294
+omni_range = 8.0
 
 [node name="P2-02-D" type="Area3D" parent="PlatSec2"]
 transform = Transform3D(6.5208, 0, 0, 0, 0.184603, 0, 0, 0, 1, 0, 4.07698, -23)
@@ -167,6 +184,10 @@ mesh = SubResource("BoxMesh_m8lkr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184027, 0, 0)
 shape = SubResource("BoxShape3D_5j45h")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/P2-02-D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+light_energy = 8.0
+
 [node name="P2-03-D" type="Area3D" parent="PlatSec2"]
 transform = Transform3D(9.12912, 0, 0, 0, 0.184603, 0, 0, 0, 33.389, 0, 3, -51)
 collision_layer = 8
@@ -181,6 +202,26 @@ mesh = SubResource("BoxMesh_m8lkr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999998, 0, 0, 0)
 shape = SubResource("BoxShape3D_aijkr")
 
+[node name="P2-03-D-01-O" type="OmniLight3D" parent="PlatSec2/P2-03-D"]
+transform = Transform3D(0.10954, 0, 0, 0, 5.41703, 0, 0, 0, 0.02995, 0, 8, 0.4193)
+light_energy = 8.0
+omni_range = 8.0
+
+[node name="P2-03-D-O2" type="OmniLight3D" parent="PlatSec2/P2-03-D"]
+transform = Transform3D(0.10954, 0, 0, 0, 5.41703, 0, 0, 0, 0.02995, 0, 8, 0.14975)
+light_energy = 8.0
+omni_range = 8.0
+
+[node name="P2-03-D-O3" type="OmniLight3D" parent="PlatSec2/P2-03-D"]
+transform = Transform3D(0.10954, 0, 0, 0, 5.41703, 0, 0, 0, 0.02995, 0, 8, -0.14975)
+light_energy = 8.0
+omni_range = 8.0
+
+[node name="P2-03-D-O4" type="OmniLight3D" parent="PlatSec2/P2-03-D"]
+transform = Transform3D(0.10954, 0, 0, 0, 5.41703, 0, 0, 0, 0.02995, 0, 8, -0.4193)
+light_energy = 8.0
+omni_range = 8.0
+
 [node name="P2-04" type="StaticBody3D" parent="PlatSec2"]
 transform = Transform3D(5.04, 0, 0, 0, 0.2, 0, 0, 0, 12.2892, -4, 6, -38)
 
@@ -189,6 +230,16 @@ shape = SubResource("BoxShape3D_hxdvv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-04"]
 mesh = SubResource("BoxMesh_5oo6l")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/P2-04"]
+transform = Transform3D(0.198413, 0, 0, 0, 5, 0, 0, 0, 0.0813723, 0.198413, 6, 0.244117)
+light_energy = 8.0
+omni_range = 8.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="PlatSec2/P2-04"]
+transform = Transform3D(0.198413, 0, 0, 0, 5, 0, 0, 0, 0.0813723, 0.198413, 6, -0.0813723)
+light_energy = 8.0
+omni_range = 8.0
 
 [node name="P2-05-T" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("Destination")]
 transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 6, -42)
@@ -206,15 +257,11 @@ mesh = SubResource("BoxMesh_rok3g")
 [node name="P2-05-De" type="Marker3D" parent="PlatSec2/P2-05-T"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.916, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -17)
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/P2-05-T"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 layers = 4
-light_energy = 8.0
-light_cull_mask = 4294967294
-omni_range = 7.0
 
 [node name="PlatSec3" type="Node3D" parent="."]
-visible = false
 
 [node name="P3-01" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(7.0785, 0, 0, 0, 0.44616, 0, 0, 0, 16.8626, -4, 22, -55)
@@ -226,6 +273,16 @@ mesh = SubResource("BoxMesh_mcftv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-01"]
 shape = SubResource("BoxShape3D_33nau")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-01"]
+transform = Transform3D(0.141273, 0, 0, 0, 2.24135, 0, 0, 0, 0.0593028, 0, 6, 0.296514)
+light_energy = 8.0
+omni_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="PlatSec3/P3-01"]
+transform = Transform3D(0.141273, 0, 0, 0, 2.24135, 0, 0, 0, 0.0593028, 0, 6, -0.177908)
+light_energy = 8.0
+omni_range = 10.0
+
 [node name="P3-02" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -12, 19, -58)
 collision_layer = 4
@@ -235,6 +292,11 @@ mesh = SubResource("BoxMesh_mcftv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-02"]
 shape = SubResource("BoxShape3D_33nau")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+light_energy = 8.0
+omni_range = 7.0
 
 [node name="P3-03" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -18, 15, -63)
@@ -246,6 +308,10 @@ mesh = SubResource("BoxMesh_mcftv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-03"]
 shape = SubResource("BoxShape3D_33nau")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+light_energy = 8.0
+
 [node name="P3-04" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -27, 15, -68)
 collision_layer = 4
@@ -255,6 +321,10 @@ mesh = SubResource("BoxMesh_mcftv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-04"]
 shape = SubResource("BoxShape3D_33nau")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-04"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+light_energy = 6.0
 
 [node name="P3-05" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -32, 13, -67)
@@ -266,6 +336,10 @@ mesh = SubResource("BoxMesh_mcftv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-05"]
 shape = SubResource("BoxShape3D_33nau")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-05"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+light_energy = 8.0
+
 [node name="P3-06" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -37, 11, -68)
 collision_layer = 4
@@ -276,8 +350,11 @@ mesh = SubResource("BoxMesh_mcftv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-06"]
 shape = SubResource("BoxShape3D_33nau")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-06"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+light_energy = 8.0
+
 [node name="PlatSec4" type="Node3D" parent="."]
-visible = false
 
 [node name="P4-01" type="StaticBody3D" parent="PlatSec4"]
 transform = Transform3D(23.7722, 0, 0, 0, 0.464006, 0, 0, 0, 23.0008, -51.4518, 6.55, -67.8774)
@@ -288,6 +365,31 @@ mesh = SubResource("BoxMesh_mcftv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-01"]
 shape = SubResource("BoxShape3D_33nau")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec4/P4-01"]
+transform = Transform3D(0.0420659, 0, 0, 0, 2.15514, 0, 0, 0, 0.0434767, -0.168264, 11.4654, 0.217384)
+light_energy = 8.0
+omni_range = 9.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="PlatSec4/P4-01"]
+transform = Transform3D(0.0420659, 0, 0, 0, 2.15514, 0, 0, 0, 0.0434767, 0.126198, 11.4654, 1.3411e-07)
+light_energy = 8.0
+omni_range = 9.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="PlatSec4/P4-01"]
+transform = Transform3D(0.0420659, 0, 0, 0, 2.15514, 0, 0, 0, 0.0434767, 0.294462, 11.4654, 0.173907)
+light_energy = 8.0
+omni_range = 9.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="PlatSec4/P4-01"]
+transform = Transform3D(0.0420659, 0, 0, 0, 2.15514, 0, 0, 0, 0.0434767, 0.294462, 11.4654, -0.173907)
+light_energy = 8.0
+omni_range = 9.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="PlatSec4/P4-01"]
+transform = Transform3D(0.0420659, 0, 0, 0, 2.15514, 0, 0, 0, 0.0434767, -0.168264, 11.4654, -0.217383)
+light_energy = 8.0
+omni_range = 9.0
 
 [node name="P4-02-I" type="StaticBody3D" parent="PlatSec4"]
 transform = Transform3D(27.3372, 0, 0, 0, 2.60832, 0, 0, 0, 0.100028, -50.8843, 3.1436, -56.3901)
@@ -315,6 +417,21 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-04-I"]
 transform = Transform3D(1.7, 0, 4.44089e-16, 0, 1.7, 0, -1.79625e-11, 0, 1.7, 0, 0, 0.850006)
 shape = SubResource("BoxShape3D_ha2tp")
+
+[node name="P4-05-T" type="Area3D" parent="PlatSec4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 8, -66)
+script = ExtResource("5_b3dr3")
+
+[node name="P4-05-De" type="Marker3D" parent="PlatSec4/P4-05-T"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec4/P4-05-T"]
+transform = Transform3D(3.1, 0, 0, 0, 0.24, 0, 0, 0, 2.7, 0, 0, 0)
+material_override = ExtResource("5_cw75q")
+mesh = SubResource("BoxMesh_mcftv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-05-T"]
+shape = SubResource("BoxShape3D_33nau")
 
 [node name="BottomDie-I,D" type="Area3D" parent="."]
 transform = Transform3D(-1.8744e+06, 0, 0, 0, 14.0415, 0, 0, 0, 283951, -5, -31, -4)
