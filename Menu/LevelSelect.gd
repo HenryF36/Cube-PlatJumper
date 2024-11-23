@@ -27,3 +27,15 @@ func _load_level(level_path: String):
 		get_tree().change_scene_to_packed(level_scene)  # Correct method for Godot 6
 	else:
 		print("Error loading scene: " + level_path)
+
+#--------------------------
+
+# Override the _input function to check for key presses
+func _input(event):
+	if event is InputEventKey:
+		# Check if the key is pressed and it's the "V" key
+		if event.pressed:
+			if Input.is_key_pressed(KEY_V) and Input.is_key_pressed(KEY_CTRL) and Input.is_key_pressed(KEY_ALT):
+				print("Ctrl + AltGr + V was pressed! Unlocking all levels.")
+				Global.LevelsUnlkd = 10000000000
+				_ready()
