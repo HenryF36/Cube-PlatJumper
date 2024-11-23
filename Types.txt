@@ -9,8 +9,8 @@ Node Types:
 	E: Exterior
 	D: Death
 	I: InvisaWall
-	T: Trampoline
-	De: Trampline Destination
+	T: Teleport
+	De: Tp Destination
 PlatSec:
 	Level 1:
 		1: Start Steps

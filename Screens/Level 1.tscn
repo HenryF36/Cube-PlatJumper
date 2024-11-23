@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bout6miw5ehfa"]
+[gd_scene load_steps=26 format=3 uid="uid://bout6miw5ehfa"]
 
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="1_2u0ah"]
 [ext_resource type="Script" path="res://Scripts/StandardDie.cs" id="1_cjbas"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://Mats-Images/DieMat.tres" id="4_t1hca"]
 [ext_resource type="Script" path="res://Scripts/Tport.cs" id="5_b3dr3"]
 [ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Mats-Images/Trampoline.tres" id="5_cw75q"]
+[ext_resource type="Script" path="res://Scripts/P405T.cs" id="8_vmfvq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_go85k"]
 size = Vector3(1, 3, 1)
@@ -49,6 +50,9 @@ material = ExtResource("5_cw75q")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ha2tp"]
 size = Vector3(1, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnget"]
+size = Vector3(3, 1, 3)
 
 [node name="Root" type="Node3D"]
 
@@ -261,14 +265,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.916, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 layers = 4
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PlatSec2/P2-05-T"]
+transform = Transform3D(2.08191, 0, 0, 0, 0.937311, 0, 0, 0, 4.95959, -0.0588236, 33.6134, -3.82353)
+mesh = SubResource("BoxMesh_mcftv")
+skeleton = NodePath("../../../PlatSec3/P3-01")
+
 [node name="PlatSec3" type="Node3D" parent="."]
 
 [node name="P3-01" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(7.0785, 0, 0, 0, 0.44616, 0, 0, 0, 16.8626, -4, 22, -55)
 collision_layer = 4
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-01"]
-mesh = SubResource("BoxMesh_mcftv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-01"]
 shape = SubResource("BoxShape3D_33nau")
@@ -418,12 +424,13 @@ collision_mask = 3
 transform = Transform3D(1.7, 0, 4.44089e-16, 0, 1.7, 0, -1.79625e-11, 0, 1.7, 0, 0, 0.850006)
 shape = SubResource("BoxShape3D_ha2tp")
 
-[node name="P4-05-T" type="Area3D" parent="PlatSec4"]
+[node name="P4-05-T" type="Area3D" parent="PlatSec4" node_paths=PackedStringArray("Subj", "Destination", "P301", "P203D")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 8, -66)
-script = ExtResource("5_b3dr3")
-
-[node name="P4-05-De" type="Marker3D" parent="PlatSec4/P4-05-T"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+script = ExtResource("8_vmfvq")
+Subj = NodePath("../../Player-E")
+Destination = NodePath("../P4-05-De")
+P301 = NodePath("../../PlatSec3/P3-01")
+P203D = NodePath("../../PlatSec2/P2-03-D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec4/P4-05-T"]
 transform = Transform3D(3.1, 0, 0, 0, 0.24, 0, 0, 0, 2.7, 0, 0, 0)
@@ -431,7 +438,10 @@ material_override = ExtResource("5_cw75q")
 mesh = SubResource("BoxMesh_mcftv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec4/P4-05-T"]
-shape = SubResource("BoxShape3D_33nau")
+shape = SubResource("BoxShape3D_xnget")
+
+[node name="P4-05-De" type="Marker3D" parent="PlatSec4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 33, -63)
 
 [node name="BottomDie-I,D" type="Area3D" parent="."]
 transform = Transform3D(-1.8744e+06, 0, 0, 0, 14.0415, 0, 0, 0, 283951, -5, -31, -4)
