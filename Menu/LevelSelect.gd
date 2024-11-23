@@ -4,21 +4,26 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Access the Global singleton and update the label with the number of unlocked levels
+	print("Global Levels Unlocked: ", Global.LevelsUnlkd)
 	label.text = "Levels Unlocked: " + str(Global.LevelsUnlkd)
 
+# Button pressed for level 1
 func _on_l_1_pressed():
 	print("Level One Selected.")
-	get_tree().change_scene("res://Level 1/Level 1.tscn")
+	_load_level("res://Level 1/Level 1.tscn")
 
+# Button pressed for level 2, with a check for unlocked levels
 func _on_l2_pressed():
 	if Global.LevelsUnlkd > 1:
 		print("Level Two Selected.")
-		get_tree().change_scene("res://Level 2/Level 2.tscn")
+		_load_level("res://Level 2/Level 2.tscn")  # Ensure this path is correct for Level 2
 	else:
 		print("Level 2 not unlocked yet. Currently at Level " + str(Global.LevelsUnlkd))
 
-# This function could be called when a level is completed to update the unlocked levels
-func _on_level_completed():
-	Global.LevelsUnlkd += 1  # Increase the number of unlocked levels
-	Global.save_levels()  # Save the updated unlocked levels
+# Helper function to load a level
+func _load_level(level_path: String):
+	var level_scene = load(level_path)
+	if level_scene:
+		get_tree().change_scene_to_packed(level_scene)  # Correct method for Godot 6
+	else:
+		print("Error loading scene: " + level_path)
