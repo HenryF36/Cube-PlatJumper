@@ -22,5 +22,8 @@ func _on_body_entered(body: Node) -> void:
 	print("Body Entered.")
 	if body == Player:
 		print("Player collided with P5-02-S")
+		# Change the scene to the specified file
+		get_tree().change_scene_to_file("res://Level 2/Level 2.tscn")
+		print("Scene Changed.")
 	else:
 		print("Collision detected with an unexpected node.")
