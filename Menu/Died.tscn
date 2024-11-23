@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://daydeo3jw20d8"]
 
-[ext_resource type="Script" path="res://Scripts/DieButtons.cs" id="1_4e78m"]
+[ext_resource type="Script" path="res://Menu/DieButtons.cs" id="1_cke0i"]
 
 [sub_resource type="Theme" id="Theme_0nw46"]
 
@@ -15,7 +15,7 @@ offset_bottom = 207.472
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0nw46")
-script = ExtResource("1_4e78m")
+script = ExtResource("1_cke0i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
