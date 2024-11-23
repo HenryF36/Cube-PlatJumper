@@ -1,11 +1,11 @@
 [gd_scene load_steps=34 format=3 uid="uid://bout6miw5ehfa"]
 
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_u0gj4"]
-[ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Mats-Images/PlatMat.tres" id="3_ofce1"]
+[ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Level 1/PlatMat.tres" id="3_ofce1"]
 [ext_resource type="Script" path="res://StandardDie.cs" id="4_luxhe"]
-[ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://Mats-Images/DieMat.tres" id="5_d80w5"]
+[ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://DieMat.tres" id="5_d80w5"]
 [ext_resource type="Script" path="res://Tport.cs" id="6_rlvbp"]
-[ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Mats-Images/Trampoline.tres" id="7_gduop"]
+[ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Level 1/Trampoline.tres" id="7_gduop"]
 [ext_resource type="Script" path="res://Level 1/P405T.cs" id="8_q7035"]
 [ext_resource type="Script" path="res://Level 1/P502S.gd" id="9_b0ah0"]
 
@@ -79,10 +79,10 @@ size = Vector3(4, 1, 4)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bebdl"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3ujc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v285v"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p737p"]
-material = SubResource("ShaderMaterial_l3ujc")
+material = SubResource("ShaderMaterial_v285v")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ctdsl"]
 size = Vector3(2, 1, 1)

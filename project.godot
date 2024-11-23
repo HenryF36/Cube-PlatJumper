@@ -13,8 +13,8 @@ config_version=5
 config/name="Cube PlatJumper"
 run/main_scene="res://Menu/Menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
-boot_splash/image="res://Mats-Images/HF Code Favicon.png"
-config/icon="res://Mats-Images/icon.svg"
+boot_splash/image="res://HF Code Favicon.png"
+config/icon="res://icon.svg"
 
 [autoload]
 
