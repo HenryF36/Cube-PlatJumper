@@ -9,7 +9,6 @@
 [ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Mats-Images/Trampoline.tres" id="5_cw75q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_go85k"]
-size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mcftv"]
 material = ExtResource("2_l47l1")
@@ -53,7 +52,7 @@ size = Vector3(1, 2, 2)
 [node name="Root" type="Node3D"]
 
 [node name="Player-E" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 24, -52)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -4, 24, -52)
 collision_mask = 15
 script = ExtResource("1_f4io2")
 
@@ -70,7 +69,7 @@ fov = 71.2798
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Player-E"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_go85k")
 
 [node name="PlatSec1" type="Node3D" parent="."]
@@ -91,7 +90,6 @@ shape = SubResource("BoxShape3D_vee7a")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlatSec1/P1-01"]
 transform = Transform3D(1, 0, 0, 0, 0.769231, 0, 0, 0, 1, 1, 2, -1)
-visible = false
 layers = 4
 light_energy = 8.0
 light_cull_mask = 4294967294

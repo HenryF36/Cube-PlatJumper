@@ -1,14 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://vgqxk8eyd1j1"]
+[gd_scene load_steps=7 format=3 uid="uid://vgqxk8eyd1j1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbsb2"]
-albedo_color = Color(0.172705, 0.248082, 0.706563, 1)
+albedo_color = Color(0.105882, 0.423529, 0.92549, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_is636"]
 material = SubResource("StandardMaterial3D_hbsb2")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5is8f"]
+albedo_color = Color(0.0980392, 0.839216, 0.933333, 1)
+metallic_specular = 0.6
+roughness = 0.9
+
 [sub_resource type="TorusMesh" id="TorusMesh_tv378"]
+material = SubResource("StandardMaterial3D_5is8f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2cfu"]
+albedo_color = Color(0.933333, 0.796078, 0.0980392, 1)
+metallic_specular = 0.59
+roughness = 0.3
 
 [sub_resource type="TorusMesh" id="TorusMesh_n7qvp"]
+material = SubResource("StandardMaterial3D_p2cfu")
 
 [node name="Cube PlatJumper Player 2_0" type="Node3D"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
