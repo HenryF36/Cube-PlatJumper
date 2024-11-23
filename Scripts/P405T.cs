@@ -13,9 +13,7 @@ public partial class P405T : Area3D
 	[Export]
 	public Area3D P203D;
 	[Export]
-	public Camera3D OldCam;
-	[Export]
-	public Camera3D Newcam;
+	public Area3D NOTADDEDYET;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -40,11 +38,6 @@ public partial class P405T : Area3D
 			P203D.Visible = false;
 			P301.SetDeferred("collision_layer", 0);
 			P203D.SetDeferred("collision_layer", 0);
-			 P203D.QueueFree();
-
-			// Switch Cameras
-			OldCam.Current = false;
-			Newcam.Current = true;
 		}
 		else
 		{
