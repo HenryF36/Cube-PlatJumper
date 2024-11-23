@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Menu/MenuButtons.cs" id="1_q45al"]
 
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6s2t"]
 
 [node name="Menu" type="Control"]

@@ -18,7 +18,7 @@ public partial class StandardDie : Area3D
 		{
 			// Call a function when the player collides with Object4
 			GD.Print("Player collided with " + Nm);
-			GetTree().ChangeSceneToFile("res://Screens/Died.tscn");
+			GetTree().ChangeSceneToFile("res://Menu/Died.tscn");
 			GD.Print("Scene Changed.");
 		}
 	}
