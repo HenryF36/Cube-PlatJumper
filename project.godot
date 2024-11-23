@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Mats-Images/HF Code Favicon.png"
 config/icon="res://Mats-Images/icon.svg"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [dotnet]
 
 project/assembly_name="Test"
