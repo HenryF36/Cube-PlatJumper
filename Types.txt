@@ -3,8 +3,6 @@ Masks:
 	2: Start
 	3: Platform
 	4: Die
-	5: Player 1 Only *
-	6: Player 2 Only *
 Node Types:
 	E: Exterior
 	D: Death
@@ -17,3 +15,5 @@ PlatSec:
 		2: Ground Level Platform with big die
 		3: Platforms after trampoline leading to temple (4)
 		4: Temple with tp to P3-01
+	Level 2:
+		1: Start area
