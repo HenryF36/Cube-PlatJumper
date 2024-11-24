@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://kmvpil05k5j8"]
+
+[ext_resource type="Material" uid="uid://dvr64rr1dwbx" path="res://Level 2/StoneTunnel.tres" id="1_yhlba"]
+[ext_resource type="Material" uid="uid://cckma05x1lv6l" path="res://Level 2/Wood.tres" id="2_myqcm"]
+[ext_resource type="Texture2D" uid="uid://grhgg1agrwcw" path="res://GlobalRs/HF Code Favicon.png" id="3_axu7h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dahyo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwwj7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rp5tm"]
+material = ExtResource("2_myqcm")
+
+[sub_resource type="BoxMesh" id="BoxMesh_3spim"]
+material = ExtResource("2_myqcm")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ryw66"]
+
+[node name="Tunnel" type="Node3D"]
+
+[node name="P2-01" type="StaticBody3D" parent="."]
+transform = Transform3D(15.288, 0, 0, 0, 1, 0, 0, 0, 53.6362, 0, -1, -89)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="P2-01"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="P2-01"]
+transform = Transform3D(0.0654108, 0, 0, 0, 1, 0, 0, 0, 0.0186441, 0, 6, 0.428815)
+light_energy = 8.0
+omni_range = 14.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="P2-01"]
+transform = Transform3D(0.0654108, 0, 0, 0, 1, 0, 0, 0, 0.0186441, 0, 6, 0.0745765)
+light_energy = 8.0
+omni_range = 14.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="P2-01"]
+transform = Transform3D(0.0654108, 0, 0, 0, 1, 0, 0, 0, 0.0186441, 0, 6, -0.205085)
+light_energy = 8.0
+omni_range = 14.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="P2-01"]
+mesh = SubResource("BoxMesh_rp5tm")
+
+[node name="Tunnel-Walls" type="Node3D" parent="."]
+
+[node name="P2-Tun-01" type="StaticBody3D" parent="Tunnel-Walls"]
+transform = Transform3D(15.288, 0, 0, 0, 0.704, 0, 0, 0, 41.2998, 0, 15.35, -85)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel-Walls/P2-Tun-01"]
+material_override = ExtResource("1_yhlba")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel-Walls/P2-Tun-01"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="P2-Tun-02" type="StaticBody3D" parent="Tunnel-Walls"]
+transform = Transform3D(-8.01912e-07, 1, 0, -18.3456, -4.37114e-08, 0, 0, 0, 51.4907, 7, 6.55, -90)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel-Walls/P2-Tun-02"]
+material_override = ExtResource("1_yhlba")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel-Walls/P2-Tun-02"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="P2-Tun-03" type="StaticBody3D" parent="Tunnel-Walls"]
+transform = Transform3D(-8.01912e-07, 1, 0, -18.3456, -4.37114e-08, 0, 0, 0, 51.4907, -8, 6.55, -90)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel-Walls/P2-Tun-03"]
+material_override = ExtResource("1_yhlba")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel-Walls/P2-Tun-03"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="P2-Tun-04" type="StaticBody3D" parent="Tunnel-Walls"]
+transform = Transform3D(-8.01912e-07, 17.68, 0, -18.3456, -7.72817e-07, 0, 0, 0, 1.02981, -1, 6.55, -116)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel-Walls/P2-Tun-04"]
+material_override = ExtResource("1_yhlba")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel-Walls/P2-Tun-04"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="P2-02" type="StaticBody3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 5.7, 3, 8, -88)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="P2-02"]
+visible = false
+mesh = SubResource("BoxMesh_ryw66")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(0.976672, -1.26264, 0, -9.38638e-09, -2.51027e-07, -2.5, 0.214735, 5.74283, -1.09278e-07, 6.5, 7, -78.25)
+layers = 4
+size = Vector3(2, 2, 5)
+texture_albedo = ExtResource("3_axu7h")
+emission_energy = 0.0
