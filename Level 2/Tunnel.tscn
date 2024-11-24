@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://dvr64rr1dwbx" path="res://Level 2/StoneTunnel.tres" id="1_yhlba"]
 [ext_resource type="Material" uid="uid://cckma05x1lv6l" path="res://Level 2/Wood.tres" id="2_myqcm"]
 [ext_resource type="Texture2D" uid="uid://grhgg1agrwcw" path="res://GlobalRs/HF Code Favicon.png" id="3_axu7h"]
+[ext_resource type="Texture2D" uid="uid://dtt4vy1x4dbla" path="res://Level 2/Level 2 Image.png" id="4_sfmtr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dahyo"]
 
@@ -13,8 +14,6 @@ material = ExtResource("2_myqcm")
 
 [sub_resource type="BoxMesh" id="BoxMesh_3spim"]
 material = ExtResource("2_myqcm")
-
-[sub_resource type="BoxMesh" id="BoxMesh_ryw66"]
 
 [node name="Tunnel" type="Node3D"]
 
@@ -99,17 +98,16 @@ mesh = SubResource("BoxMesh_3spim")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel-Walls/P2-Tun-04"]
 shape = SubResource("BoxShape3D_mwwj7")
 
-[node name="P2-02" type="StaticBody3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 5.7, 3, 8, -88)
-visible = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="P2-02"]
-visible = false
-mesh = SubResource("BoxMesh_ryw66")
-
-[node name="Decal" type="Decal" parent="."]
+[node name="P2-02" type="Decal" parent="."]
 transform = Transform3D(0.976672, -1.26264, 0, -9.38638e-09, -2.51027e-07, -2.5, 0.214735, 5.74283, -1.09278e-07, 6.5, 7, -78.25)
 layers = 4
 size = Vector3(2, 2, 5)
 texture_albedo = ExtResource("3_axu7h")
+emission_energy = 0.0
+
+[node name="P2-03" type="Decal" parent="."]
+transform = Transform3D(6.28959, 0, 0, 0, 3.42137, 0, 0, 0, 2.5, 1.5, -1.71069, -75.25)
+layers = 4
+size = Vector3(2, 1, 5)
+texture_albedo = ExtResource("4_sfmtr")
 emission_energy = 0.0
