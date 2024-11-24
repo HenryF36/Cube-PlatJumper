@@ -12,12 +12,11 @@ public partial class Player : CharacterBody3D
 	// Jump force (initial velocity for the jump).
 	[Export]
 	public int JumpForce { get; set; } = 20;
-
 	// Check if the player is jumping
 	private bool _isJumping = false;
 
 	private Vector3 _targetVelocity = Vector3.Zero;
-
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		var direction = Vector3.Zero;
