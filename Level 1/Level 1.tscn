@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://bout6miw5ehfa"]
+[gd_scene load_steps=37 format=3 uid="uid://bout6miw5ehfa"]
 
 [ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_g14sg"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_u0gj4"]
 [ext_resource type="Script" path="res://GlobalRs/BottomD.gd" id="3_1gamk"]
 [ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Level 1/PlatMat.tres" id="3_ofce1"]
 [ext_resource type="Script" path="res://StandardDie.cs" id="4_luxhe"]
+[ext_resource type="Texture2D" uid="uid://bnstt8lmma2vg" path="res://Level 1/Level 1 Pic.png" id="5_41kea"]
 [ext_resource type="Script" path="res://GlobalRs/StandardDie.cs" id="5_fbsnn"]
 [ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://GlobalRs/DieMat.tres" id="6_yggxo"]
 [ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Level 1/Trampoline.tres" id="7_gduop"]
@@ -308,97 +309,107 @@ layers = 4
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="PlatSec2/P2-05-T"]
 transform = Transform3D(2.08191, 0, 0, 0, 0.937311, 0, 0, 0, 4.95959, -0.0588236, 33.6134, -3.82353)
 mesh = SubResource("BoxMesh_mcftv")
-skeleton = NodePath("../../PlatSec3/P3-01")
+skeleton = NodePath("../../../PlatSec3/P3-01")
 
-[node name="PlatSec3" type="Node3D" parent="PlatSec2"]
+[node name="Decal" type="Decal" parent="PlatSec2"]
+transform = Transform3D(2.275, 0, 0, 0, 1, 0, 0, 0, 2.88522, 1, 4, -28)
+layers = 4
+texture_albedo = ExtResource("5_41kea")
 
-[node name="P3-01" type="StaticBody3D" parent="PlatSec2/PlatSec3"]
+[node name="PlatSec3" type="Node3D" parent="."]
+
+[node name="P3-01" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(7.0785, 0, 0, 0, 0.44616, 0, 0, 0, 16.8626, -4, 22, -55)
 collision_layer = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/PlatSec3/P3-01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-01"]
 shape = SubResource("BoxShape3D_33nau")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/PlatSec3/P3-01"]
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-01"]
 transform = Transform3D(0.141273, 0, 0, 0, 2.24135, 0, 0, 0, 0.0593028, 0, 6, 0.296514)
 light_energy = 8.0
 omni_range = 10.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="PlatSec2/PlatSec3/P3-01"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="PlatSec3/P3-01"]
 transform = Transform3D(0.141273, 0, 0, 0, 2.24135, 0, 0, 0, 0.0593028, 0, 6, -0.177908)
 light_energy = 8.0
 omni_range = 10.0
 
-[node name="P3-02" type="StaticBody3D" parent="PlatSec2/PlatSec3"]
+[node name="P3-02" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -12, 19, -58)
 collision_layer = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/PlatSec3/P3-02"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-02"]
 mesh = SubResource("BoxMesh_mcftv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/PlatSec3/P3-02"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-02"]
 shape = SubResource("BoxShape3D_33nau")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/PlatSec3/P3-02"]
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-02"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 light_energy = 8.0
 omni_range = 7.0
 
-[node name="P3-03" type="StaticBody3D" parent="PlatSec2/PlatSec3"]
+[node name="P3-03" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -18, 15, -63)
 collision_layer = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/PlatSec3/P3-03"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-03"]
 mesh = SubResource("BoxMesh_mcftv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/PlatSec3/P3-03"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-03"]
 shape = SubResource("BoxShape3D_33nau")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/PlatSec3/P3-03"]
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-03"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 light_energy = 8.0
 
-[node name="P3-04" type="StaticBody3D" parent="PlatSec2/PlatSec3"]
+[node name="P3-04" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -27, 15, -68)
 collision_layer = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/PlatSec3/P3-04"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-04"]
 mesh = SubResource("BoxMesh_mcftv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/PlatSec3/P3-04"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-04"]
 shape = SubResource("BoxShape3D_33nau")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/PlatSec3/P3-04"]
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-04"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 light_energy = 6.0
 
-[node name="P3-05" type="StaticBody3D" parent="PlatSec2/PlatSec3"]
+[node name="P3-05" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -32, 13, -67)
 collision_layer = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/PlatSec3/P3-05"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-05"]
 mesh = SubResource("BoxMesh_mcftv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/PlatSec3/P3-05"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-05"]
 shape = SubResource("BoxShape3D_33nau")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/PlatSec3/P3-05"]
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-05"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 light_energy = 8.0
 
-[node name="P3-06" type="StaticBody3D" parent="PlatSec2/PlatSec3"]
+[node name="P3-06" type="StaticBody3D" parent="PlatSec3"]
 transform = Transform3D(4.2471, 0, 0, 0, 0.44616, 0, 0, 0, 5.05878, -37, 11, -68)
 collision_layer = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/PlatSec3/P3-06"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3/P3-06"]
 mesh = SubResource("BoxMesh_mcftv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/PlatSec3/P3-06"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3/P3-06"]
 shape = SubResource("BoxShape3D_33nau")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec2/PlatSec3/P3-06"]
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec3/P3-06"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 light_energy = 8.0
+
+[node name="Decal" type="Decal" parent="PlatSec3"]
+transform = Transform3D(3.5035, 0, 0, 0, 0.36, 0, 0, 0, 2.30818, -3, 22, -50)
+layers = 4
+texture_albedo = ExtResource("5_41kea")
 
 [node name="PlatSec4" type="Node3D" parent="."]
 
