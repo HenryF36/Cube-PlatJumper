@@ -1,73 +1,15 @@
 [gd_scene load_steps=35 format=3 uid="uid://bout6miw5ehfa"]
 
-[ext_resource type="Script" path="res://BottomD.gd" id="2_flfcy"]
+[ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_g14sg"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_u0gj4"]
+[ext_resource type="Script" path="res://GlobalRs/BottomD.gd" id="3_1gamk"]
 [ext_resource type="Material" uid="uid://bn7k1tju6qww7" path="res://Level 1/PlatMat.tres" id="3_ofce1"]
 [ext_resource type="Script" path="res://StandardDie.cs" id="4_luxhe"]
-[ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://DieMat.tres" id="5_d80w5"]
-[ext_resource type="Script" path="res://Tport.cs" id="6_rlvbp"]
+[ext_resource type="Material" path="res://DieMat.tres" id="5_d80w5"]
+[ext_resource type="Script" path="res://GlobalRs/StandardDie.cs" id="5_fbsnn"]
 [ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Level 1/Trampoline.tres" id="7_gduop"]
-[ext_resource type="Script" path="res://Level 1/P405T.cs" id="8_q7035"]
+[ext_resource type="Script" path="res://GlobalRs/Tport.cs" id="7_oinu4"]
 [ext_resource type="Script" path="res://Level 1/P502S.gd" id="9_b0ah0"]
-
-[sub_resource type="GDScript" id="GDScript_1j082"]
-script/source = "extends CharacterBody3D
-
-# Export variables to be editable in the Godot editor
-@export var Speed : int = 14
-@export var FallAcceleration : int = 75
-@export var JumpForce : int = 20
-
-# Private variable to track if the player is jumping
-var _isJumping : bool = false
-
-# Target velocity for movement
-var _targetVelocity : Vector3 = Vector3.ZERO
-
-# Called every frame, use delta for frame-independent movement
-func _physics_process(delta: float) -> void:
-	var direction : Vector3 = Vector3.ZERO
-
-	# Handling horizontal movement
-	if Input.is_action_pressed(\"move_right\"):
-		direction.x += 1.0
-	if Input.is_action_pressed(\"move_left\"):
-		direction.x -= 1.0
-	if Input.is_action_pressed(\"move_backward\"):
-		direction.z += 1.0
-	if Input.is_action_pressed(\"move_forward\"):
-		direction.z -= 1.0
-
-	# Normalize direction and update rotation if moving
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
-		$Pivot.look_at(transform.origin + direction)  # Look at the direction the player is moving
-
-
-	# Update horizontal velocity
-	_targetVelocity.x = direction.x * Speed
-	_targetVelocity.z = direction.z * Speed
-
-	# Jumping and gravity logic
-	if is_on_floor():  # If on the ground
-		if _isJumping:  # If the player was jumping, reset to normal state
-			_isJumping = false
-
-		# Reset vertical velocity if on the ground (not jumping)
-		_targetVelocity.y = 0
-
-		# Check for jump input
-		if Input.is_action_just_pressed(\"jump\"):  # When the jump button is pressed
-			_targetVelocity.y = JumpForce  # Apply the jump force
-			_isJumping = true  # Mark that the player is jumping
-	else:  # If in the air (falling)
-		# Apply gravity
-		_targetVelocity.y -= FallAcceleration * delta
-
-	# Moving the character
-	velocity = _targetVelocity
-	move_and_slide()
-"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_go85k"]
 size = Vector3(1, 3, 1)
@@ -139,7 +81,7 @@ material = SubResource("StandardMaterial3D_idjgu")
 [node name="Player-E" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
 collision_mask = 15
-script = SubResource("GDScript_1j082")
+script = ExtResource("1_g14sg")
 
 [node name="CameraPivot2" type="Marker3D" parent="Player-E"]
 transform = Transform3D(20, 0, 0, 0, 19.3185, 5.17638, 0, -5.17638, 19.3185, 0, 14, 6)
@@ -157,10 +99,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_go85k")
 
-[node name="PlatSec1" type="Node3D" parent="." node_paths=PackedStringArray("Player")]
+[node name="PlatSec1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-script = ExtResource("2_flfcy")
-Player = NodePath("../Player-E")
+script = ExtResource("3_1gamk")
 
 [node name="P1-01" type="StaticBody3D" parent="PlatSec1"]
 transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, 1, 0)
@@ -258,8 +199,7 @@ omni_range = 8.0
 [node name="P2-02-D" type="Area3D" parent="PlatSec2"]
 transform = Transform3D(6.5208, 0, 0, 0, 0.184603, 0, 0, 0, 1, 0, 4.07698, -23)
 collision_layer = 8
-script = ExtResource("4_luxhe")
-Nm = "P2-02-D"
+script = ExtResource("5_fbsnn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-02-D"]
 transform = Transform3D(1, 0, 0, 0, 2.025, 0, 0, 0, 3.4, 0.184027, -2.22222, 0)
@@ -276,8 +216,7 @@ light_energy = 8.0
 [node name="P2-03-D" type="Area3D" parent="PlatSec2"]
 transform = Transform3D(10.042, 0, 0, 0, 0.184603, 0, 0, 0, 33.389, 0, 3, -51)
 collision_layer = 8
-script = ExtResource("4_luxhe")
-Nm = "P2-03-D"
+script = ExtResource("5_fbsnn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-03-D"]
 editor_description = "P2-03-D is the large pool under P3"
@@ -327,12 +266,10 @@ transform = Transform3D(0.198413, 0, 0, 0, 5, 0, 0, 0, 0.0813723, 0.198413, 6, -
 light_energy = 8.0
 omni_range = 8.0
 
-[node name="P2-05-T" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("Destination")]
+[node name="P2-05-T" type="Area3D" parent="PlatSec2"]
 transform = Transform3D(3.4, 0, 0, 0, 0.476, 0, 0, 0, 3.4, -3.8, 6, -42)
 collision_layer = 4
-script = ExtResource("6_rlvbp")
-Destination = NodePath("P2-05-De")
-Name = "P2-05-T"
+script = ExtResource("7_oinu4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-05-T"]
 shape = SubResource("BoxShape3D_atagc")
@@ -506,15 +443,9 @@ collision_mask = 3
 transform = Transform3D(1.7, 0, 4.44089e-16, 0, 1.7, 0, -1.79625e-11, 0, 1.7, 0, 0, 0.850006)
 shape = SubResource("BoxShape3D_ha2tp")
 
-[node name="P4-05-T" type="Area3D" parent="PlatSec4" node_paths=PackedStringArray("Subj", "Destination", "P301", "P203D", "OldCam", "Newcam")]
+[node name="P4-05-T" type="Area3D" parent="PlatSec4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 8, -66)
-script = ExtResource("8_q7035")
-Subj = NodePath("../../Player-E")
-Destination = NodePath("../../PlatSec5/P4-05-De")
-P301 = NodePath("../../PlatSec2/PlatSec3/P3-01")
-P203D = NodePath("../../PlatSec2/P2-03-D")
-OldCam = NodePath("../../Player-E/CameraPivot2/CameraMain")
-Newcam = NodePath("../../PlatSec5/P5-C")
+script = ExtResource("7_oinu4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec4/P4-05-T"]
 transform = Transform3D(3.1, 0, 0, 0, 0.24, 0, 0, 0, 2.7, 0, 0, 0)
@@ -594,7 +525,7 @@ shape = SubResource("BoxShape3D_h11yc")
 [node name="P5-02-D" type="Area3D" parent="PlatSec5"]
 transform = Transform3D(-3.625e-09, -4.27866e-08, 4.78878, -0.1792, -5.38175e-08, 0, 7.83308e-09, -1.2312, -1.66419e-07, -4.61, -4.7168, -55.74)
 collision_layer = 4
-script = ExtResource("4_luxhe")
+script = ExtResource("5_fbsnn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec5/P5-02-D"]
 mesh = SubResource("BoxMesh_7ua7j")
