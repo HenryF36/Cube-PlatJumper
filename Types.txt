@@ -17,3 +17,4 @@ PlatSec:
 		4: Temple with tp to P3-01
 	Level 2:
 		1: Start area
+		2: Tunnel

@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Player and Player.global_transform.origin.y < -30:
+	if Player and Player.global_transform.origin.y < -25:
 		print("Player collided with the bottom.")
 		# Change the scene to the specified file
 		get_tree().change_scene_to_file("res://Menu/Died.tscn")

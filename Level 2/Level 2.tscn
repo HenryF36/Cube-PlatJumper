@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bpyilnem5y0pt"]
+[gd_scene load_steps=21 format=3 uid="uid://bpyilnem5y0pt"]
 
 [ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_w611c"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_etp1k"]
 [ext_resource type="Material" uid="uid://cckma05x1lv6l" path="res://Level 2/Wood.tres" id="2_yoeb6"]
 [ext_resource type="Script" path="res://GlobalRs/BottomD.gd" id="3_28cqn"]
+[ext_resource type="Script" path="res://GlobalRs/StandardDie.cs" id="5_dr3x5"]
 [ext_resource type="Script" path="res://GlobalRs/Tport.cs" id="5_t8ss2"]
+[ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://GlobalRs/DieMat.tres" id="6_ajoe2"]
+[ext_resource type="Material" uid="uid://dvr64rr1dwbx" path="res://Level 2/StoneTunnel.tres" id="8_nxkv1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xx0uw"]
 size = Vector3(1, 3, 1)
@@ -23,8 +26,16 @@ material = ExtResource("2_yoeb6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7wijf"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_cfxbc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5jkxe"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ag42"]
 size = Vector3(1, 12, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3spim"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwwj7"]
 
 [node name="Level2" type="Node3D"]
 
@@ -82,7 +93,7 @@ light_energy = 8.0
 omni_range = 12.0
 
 [node name="P1-01" type="StaticBody3D" parent="PlatSec1"]
-transform = Transform3D(17.408, 0, 0, 0, 0.26, 0, 0, 0, 41.496, 0, -0.5, -27)
+transform = Transform3D(17.408, 0, 0, 0, 0.26, 0, 0, 0, 49.7952, 0, -0.5, -31)
 collision_layer = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec1/P1-01"]
@@ -114,8 +125,53 @@ transform = Transform3D(0.0574448, 0, 0, 0, 3.84615, 0, 0, 0, 0.0240987, 0, 19.2
 light_energy = 10.0
 omni_range = 13.0
 
+[node name="P1-02-D" type="Area3D" parent="PlatSec1"]
+transform = Transform3D(17.952, 0, 0, 0, 0.48, 0, 0, 0, 4.2432, 0, 0, -19)
+script = ExtResource("5_dr3x5")
+Nm = "P1-02-D"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec1/P1-02-D"]
+material_override = ExtResource("6_ajoe2")
+mesh = SubResource("BoxMesh_cfxbc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/P1-02-D"]
+shape = SubResource("BoxShape3D_5jkxe")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec1/P1-02-D"]
+transform = Transform3D(0.0557041, 0, 0, 0, 2.08333, 0, 0, 0, 0.235671, -0.334225, 4.16667, 0)
+light_energy = 8.0
+omni_range = 8.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="PlatSec1/P1-02-D"]
+transform = Transform3D(0.0557041, 0, 0, 0, 2.08333, 0, 0, 0, 0.235671, 0.167112, 4.16667, 0)
+light_energy = 8.0
+omni_range = 8.0
+
+[node name="P1-02-D2" type="Area3D" parent="PlatSec1"]
+transform = Transform3D(17.952, 0, 0, 0, 0.48, 0, 0, 0, 4.2432, 0, 0, -34)
+script = ExtResource("5_dr3x5")
+Nm = "P1-02-D"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec1/P1-02-D2"]
+material_override = ExtResource("6_ajoe2")
+mesh = SubResource("BoxMesh_cfxbc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/P1-02-D2"]
+shape = SubResource("BoxShape3D_5jkxe")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlatSec1/P1-02-D2"]
+transform = Transform3D(0.0557041, 0, 0, 0, 2.08333, 0, 0, 0, 0.235671, -0.334225, 4.16667, 0)
+light_energy = 8.0
+omni_range = 8.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="PlatSec1/P1-02-D2"]
+transform = Transform3D(0.0557041, 0, 0, 0, 2.08333, 0, 0, 0, 0.235671, 0.167112, 4.16667, 0)
+light_energy = 8.0
+omni_range = 8.0
+
 [node name="DEBUG" type="Area3D" parent="PlatSec1" node_paths=PackedStringArray("Subj", "Destination")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+visible = false
 script = ExtResource("5_t8ss2")
 Subj = NodePath("../../Player-E")
 Destination = NodePath("Marker3D")
@@ -127,3 +183,72 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, -31)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/DEBUG"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, -0.5)
 shape = SubResource("BoxShape3D_2ag42")
+
+[node name="PlatSec2" type="Node3D" parent="."]
+
+[node name="P2-01" type="StaticBody3D" parent="PlatSec2"]
+transform = Transform3D(15.288, 0, 0, 0, 1, 0, 0, 0, 53.6362, 0, -1, -89)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-01"]
+material_override = ExtResource("8_nxkv1")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-01"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="Tunnel-Walls" type="Node3D" parent="PlatSec2"]
+
+[node name="P2-Tun-01" type="StaticBody3D" parent="PlatSec2/Tunnel-Walls"]
+transform = Transform3D(15.288, 0, 0, 0, 0.88, 0, 0, 0, 41.2998, 0, 10, -85)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-01"]
+material_override = ExtResource("8_nxkv1")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-01"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="P2-Tun-02" type="StaticBody3D" parent="PlatSec2/Tunnel-Walls"]
+transform = Transform3D(-1.00239e-06, 1, 0, -22.932, -4.37114e-08, 0, 0, 0, 51.4907, 7, -1, -90)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-02"]
+material_override = ExtResource("8_nxkv1")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-02"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="P2-Tun-03" type="StaticBody3D" parent="PlatSec2/Tunnel-Walls"]
+transform = Transform3D(-1.00239e-06, 1, 0, -22.932, -4.37114e-08, 0, 0, 0, 51.4907, -8, -1, -90)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-03"]
+material_override = ExtResource("8_nxkv1")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-03"]
+shape = SubResource("BoxShape3D_mwwj7")
+
+[node name="P2-Tun-04" type="StaticBody3D" parent="PlatSec2/Tunnel-Walls"]
+transform = Transform3D(-1.00239e-06, 17.68, 0, -22.932, -7.72817e-07, 0, 0, 0, 1.02981, -1, -1, -116)
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_dahyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-04"]
+material_override = ExtResource("8_nxkv1")
+mesh = SubResource("BoxMesh_3spim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/Tunnel-Walls/P2-Tun-04"]
+shape = SubResource("BoxShape3D_mwwj7")
