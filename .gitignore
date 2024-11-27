@@ -24,3 +24,16 @@ addons/godot-git-plugin/linux/libgit_plugin.linux.editor.x86_64.so
 addons/godot-git-plugin/LICENSE
 addons/godot-git-plugin/git_plugin.gdextension
 addons/godot-git-plugin/win64/~libgit_plugin.windows.editor.x86_64.dll
+Level 1/Level 1 Pic.png.import
+Level 2/Level 2 Image.png.import
+GlobalRs/HF Code Favicon.png.import
+GlobalRs/icon.svg.import
+Level 1/Level 1 Pic.png.import
+Level 2/Level 2 Image.png.import
+/android
+/android
+*.gradle
+*.properties
+/android/build
+/android/build/res/values-ru
+/android/build/res

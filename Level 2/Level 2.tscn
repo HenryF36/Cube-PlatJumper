@@ -1,13 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpyilnem5y0pt"]
+[gd_scene load_steps=22 format=3 uid="uid://bpyilnem5y0pt"]
 
 [ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_w611c"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_etp1k"]
-[ext_resource type="Material" uid="uid://cckma05x1lv6l" path="res://Level 2/Wood.tres" id="2_yoeb6"]
+[ext_resource type="Material" path="res://Level 2/Wood.tres" id="2_yoeb6"]
 [ext_resource type="Script" path="res://GlobalRs/BottomD.gd" id="3_28cqn"]
 [ext_resource type="Script" path="res://GlobalRs/StandardDie.cs" id="5_dr3x5"]
 [ext_resource type="Script" path="res://GlobalRs/Tport.cs" id="5_t8ss2"]
 [ext_resource type="Material" uid="uid://bwmsmj2xkskxv" path="res://GlobalRs/DieMat.tres" id="6_ajoe2"]
-[ext_resource type="PackedScene" uid="uid://kmvpil05k5j8" path="res://Level 2/Tunnel.tscn" id="8_3ogdl"]
+[ext_resource type="PackedScene" uid="uid://bs1ndv6x7i6ib" path="res://Level 2/Tunnel.tscn" id="8_3ogdl"]
+[ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Level 2/Trampoline.tres" id="9_kso4w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xx0uw"]
 size = Vector3(1, 3, 1)
@@ -32,6 +33,10 @@ material = ExtResource("2_yoeb6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ag42"]
 size = Vector3(1, 12, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bpkfg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kwdwm"]
 
 [node name="Level2" type="Node3D"]
 
@@ -98,7 +103,7 @@ layers = 4
 mesh = SubResource("BoxMesh_dyoqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/P1-01"]
-transform = Transform3D(0.839997, 0, 0, 0, 0.999993, 0, 0, 0, 1.06399, 0, 0, 0)
+transform = Transform3D(0.839997, 0, 0, 0, 0.999993, 0, 0, 0, 0.957591, 0, 0, 0)
 shape = SubResource("BoxShape3D_7wijf")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlatSec1/P1-01"]
@@ -181,4 +186,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, -0.5)
 shape = SubResource("BoxShape3D_2ag42")
 
 [node name="PlatSec2" parent="." instance=ExtResource("8_3ogdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -115)
+
+[node name="P2-04-T2" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("Subj", "Destination")]
+transform = Transform3D(16.64, 0, 0, 0, 0.4, 0, 0, 0, 8.004, 0, 0, 6)
+script = ExtResource("5_t8ss2")
+Subj = NodePath("../../Player-E")
+Destination = NodePath("Marker3D")
+Name = "P2-04-T"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec2/P2-04-T2"]
+material_override = ExtResource("9_kso4w")
+mesh = SubResource("BoxMesh_bpkfg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-04-T2"]
+shape = SubResource("BoxShape3D_kwdwm")
+
+[node name="Marker3D" type="Marker3D" parent="PlatSec2/P2-04-T2"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 587.5, 0)
