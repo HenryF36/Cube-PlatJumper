@@ -181,4 +181,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, -0.5)
 shape = SubResource("BoxShape3D_2ag42")
 
 [node name="PlatSec2" parent="." instance=ExtResource("8_3ogdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -112)

@@ -16,9 +16,10 @@ material = ExtResource("2_myqcm")
 material = ExtResource("2_myqcm")
 
 [node name="Tunnel" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
 
 [node name="P2-01" type="StaticBody3D" parent="."]
-transform = Transform3D(15.288, 0, 0, 0, 1, 0, 0, 0, 53.6362, 0, -1, -89)
+transform = Transform3D(15.288, 0, 0, 0, 1, 0, 0, 0, 53.6362, 0, -1, 22)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_dahyo")
@@ -45,9 +46,10 @@ omni_range = 14.0
 mesh = SubResource("BoxMesh_rp5tm")
 
 [node name="Tunnel-Walls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 27)
 
 [node name="P2-Tun-01" type="StaticBody3D" parent="Tunnel-Walls"]
-transform = Transform3D(15.288, 0, 0, 0, 0.704, 0, 0, 0, 41.2998, 0, 15.35, -85)
+transform = Transform3D(15.288, 0, 0, 0, 0.704, 0, 0, 0, 41.2998, 0, 9, 0)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_dahyo")
@@ -60,7 +62,7 @@ mesh = SubResource("BoxMesh_3spim")
 shape = SubResource("BoxShape3D_mwwj7")
 
 [node name="P2-Tun-02" type="StaticBody3D" parent="Tunnel-Walls"]
-transform = Transform3D(-8.01912e-07, 1, 0, -18.3456, -4.37114e-08, 0, 0, 0, 51.4907, 7, 6.55, -90)
+transform = Transform3D(-8.01912e-07, 1, 0, -18.3456, -4.37114e-08, 0, 0, 0, 51.4907, 7, 0, 0)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_dahyo")
@@ -73,7 +75,7 @@ mesh = SubResource("BoxMesh_3spim")
 shape = SubResource("BoxShape3D_mwwj7")
 
 [node name="P2-Tun-03" type="StaticBody3D" parent="Tunnel-Walls"]
-transform = Transform3D(-8.01912e-07, 1, 0, -18.3456, -4.37114e-08, 0, 0, 0, 51.4907, -8, 6.55, -90)
+transform = Transform3D(-8.01912e-07, 1, 0, -18.3456, -4.37114e-08, 0, 0, 0, 51.4907, -8, 0, 0)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_dahyo")
@@ -86,7 +88,7 @@ mesh = SubResource("BoxMesh_3spim")
 shape = SubResource("BoxShape3D_mwwj7")
 
 [node name="P2-Tun-04" type="StaticBody3D" parent="Tunnel-Walls"]
-transform = Transform3D(-8.01912e-07, 17.68, 0, -18.3456, -7.72817e-07, 0, 0, 0, 1.02981, -1, 6.55, -116)
+transform = Transform3D(-8.01912e-07, 17.68, 0, -18.3456, -7.72817e-07, 0, 0, 0, 1.02981, -1, 0, -25)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_dahyo")
@@ -99,14 +101,14 @@ mesh = SubResource("BoxMesh_3spim")
 shape = SubResource("BoxShape3D_mwwj7")
 
 [node name="P2-02" type="Decal" parent="."]
-transform = Transform3D(0.976672, -1.26264, 0, -9.38638e-09, -2.51027e-07, -2.5, 0.214735, 5.74283, -1.09278e-07, 6.5, 7, -78.25)
+transform = Transform3D(0.976672, -1.26264, 0, -9.38638e-09, -2.51027e-07, -2.5, 0.214735, 5.74283, -1.09278e-07, 6.5, 7, 32.75)
 layers = 4
 size = Vector3(2, 2, 5)
 texture_albedo = ExtResource("3_axu7h")
 emission_energy = 0.0
 
 [node name="P2-03" type="Decal" parent="."]
-transform = Transform3D(6.28959, 0, 0, 0, 3.42137, 0, 0, 0, 2.5, 1.5, -1.71069, -75.25)
+transform = Transform3D(6.28959, 0, 0, 0, 3.42137, 0, 0, 0, 2.5, 1.5, -1.71069, 35.75)
 layers = 4
 size = Vector3(2, 1, 5)
 texture_albedo = ExtResource("4_sfmtr")
