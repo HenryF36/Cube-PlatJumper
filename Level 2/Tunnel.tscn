@@ -27,20 +27,20 @@ physics_material_override = SubResource("PhysicsMaterial_dahyo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P2-01"]
 shape = SubResource("BoxShape3D_mwwj7")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="P2-01"]
-transform = Transform3D(0.0654108, 0, 0, 0, 1, 0, 0, 0, 0.0186441, 0, 6, 0.428815)
-light_energy = 8.0
-omni_range = 14.0
+[node name="OmniLight3D" type="SpotLight3D" parent="P2-01"]
+transform = Transform3D(0.0654108, 0, 0, 0, 0.5, 0.0161463, 0, -0.866026, 0.00932206, 0, 17, 0.428815)
+light_energy = 50.0
+spot_range = 22.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="P2-01"]
-transform = Transform3D(0.0654108, 0, 0, 0, 1, 0, 0, 0, 0.0186441, 0, 6, 0.0745765)
-light_energy = 8.0
-omni_range = 14.0
+[node name="OmniLight3D2" type="SpotLight3D" parent="P2-01"]
+transform = Transform3D(0.0654108, 0, 0, 0, 0.0107636, 0.999942, 0, -0.018643, 0.000200733, 0, 17, 0.0186443)
+light_energy = 50.0
+spot_range = 22.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="P2-01"]
-transform = Transform3D(0.0654108, 0, 0, 0, 1, 0, 0, 0, 0.0186441, 0, 6, -0.205085)
-light_energy = 8.0
-omni_range = 14.0
+[node name="OmniLight3D3" type="SpotLight3D" parent="P2-01"]
+transform = Transform3D(0.0654108, 0, 0, 0, 0.0107636, 0.999942, 0, -0.018643, 0.000200677, 0, 17, -0.223729)
+light_energy = 50.0
+spot_range = 22.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="P2-01"]
 mesh = SubResource("BoxMesh_rp5tm")
