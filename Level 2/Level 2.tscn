@@ -50,6 +50,7 @@ size = Vector3(3, 1, 3)
 [sub_resource type="BoxMesh" id="BoxMesh_bvqho"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3l41n"]
+size = Vector3(1, 3, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aen5i"]
 
@@ -284,7 +285,7 @@ Player = NodePath("../../Player-E")
 P301I = NodePath("../P3-01-I")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-02"]
-transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 1, 0, 1.3875, 0)
+transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 1, 0, 3.8875, 0)
 shape = SubResource("BoxShape3D_3l41n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3-I/P3-02"]

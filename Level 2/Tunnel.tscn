@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dvr64rr1dwbx" path="res://Level 2/StoneTunnel.tres" id="1_yhlba"]
 [ext_resource type="Material" uid="uid://cckma05x1lv6l" path="res://Level 2/Wood.tres" id="2_myqcm"]
-[ext_resource type="Texture2D" uid="uid://grhgg1agrwcw" path="res://GlobalRs/HF Code Favicon.png" id="3_axu7h"]
+[ext_resource type="Texture2D" uid="uid://b0qmppa5cqj5t" path="res://GlobalRs/New Personal Icon.png" id="3_kwvxs"]
 [ext_resource type="Texture2D" uid="uid://dtt4vy1x4dbla" path="res://Level 2/Level 2 Image.png" id="4_sfmtr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dahyo"]
@@ -104,7 +104,7 @@ shape = SubResource("BoxShape3D_mwwj7")
 transform = Transform3D(0.976672, -1.26264, 0, -9.38638e-09, -2.51027e-07, -2.5, 0.214735, 5.74283, -1.09278e-07, 6.5, 7, 32.75)
 layers = 4
 size = Vector3(2, 2, 5)
-texture_albedo = ExtResource("3_axu7h")
+texture_albedo = ExtResource("3_kwvxs")
 emission_energy = 0.0
 
 [node name="P2-03" type="Decal" parent="."]
