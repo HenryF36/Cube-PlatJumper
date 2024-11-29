@@ -247,3 +247,9 @@ Name = "P2-04-05-T,I"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-04/P2-04-05-T,I"]
 shape = SubResource("BoxShape3D_if1qs")
+
+[node name="Marker3D" type="Marker3D" parent="PlatSec2/P2-04/P2-04-05-T,I"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20088, 31.6667, 7.68577)
+
+[node name="PlatSec3-I" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 24, -31)
