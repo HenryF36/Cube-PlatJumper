@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs1ndv6x7i6ib"]
+[gd_scene load_steps=9 format=3 uid="uid://kmvpil05k5j8"]
 
-[ext_resource type="Material" uid="uid://belvm1j1ptb10" path="res://Level 2/StoneTunnel.tres" id="1_yhlba"]
-[ext_resource type="Material" path="res://Level 2/Wood.tres" id="2_myqcm"]
+[ext_resource type="Material" uid="uid://dvr64rr1dwbx" path="res://Level 2/StoneTunnel.tres" id="1_yhlba"]
+[ext_resource type="Material" uid="uid://cckma05x1lv6l" path="res://Level 2/Wood.tres" id="2_myqcm"]
 [ext_resource type="Texture2D" uid="uid://grhgg1agrwcw" path="res://GlobalRs/HF Code Favicon.png" id="3_axu7h"]
 [ext_resource type="Texture2D" uid="uid://dtt4vy1x4dbla" path="res://Level 2/Level 2 Image.png" id="4_sfmtr"]
 
