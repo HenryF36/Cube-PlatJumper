@@ -225,24 +225,32 @@ shape = SubResource("BoxShape3D_if1qs")
 transform = Transform3D(4.998, 0, 0, 0, 0.6, 0, 0, 0, 6.1152, 16, 17, 18)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-04/02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20008, 0, 0.327054)
 shape = SubResource("BoxShape3D_if1qs")
 
 [node name="03" type="StaticBody3D" parent="PlatSec2/P2-04"]
 transform = Transform3D(4.998, 0, 0, 0, 0.6, 0, 0, 0, 6.1152, 20, 17, 13)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-04/03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60024, 0, 0.490582)
+shape = SubResource("BoxShape3D_if1qs")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PlatSec2/P2-04/03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.163525)
 shape = SubResource("BoxShape3D_if1qs")
 
 [node name="04" type="StaticBody3D" parent="PlatSec2/P2-04"]
 transform = Transform3D(4.998, 0, 0, 0, 0.6, 0, 0, 0, 6.1152, 24, 17, 10)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-04/04"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40016, 0, -0.163528)
 shape = SubResource("BoxShape3D_if1qs")
 
-[node name="P2-04-05-T,I" type="Area3D" parent="PlatSec2/P2-04" node_paths=PackedStringArray("Subj")]
-transform = Transform3D(4.998, 0, 0, 0, 0.6, 0, 0, 0, 6.1152, 25, 17, 9)
+[node name="P2-04-05-T,I" type="Area3D" parent="PlatSec2/P2-04" node_paths=PackedStringArray("Subj", "Destination")]
+transform = Transform3D(4.998, 0, 0, 0, 0.6, 0, 0, 0, 6.1152, 24, 17, 7)
 script = ExtResource("5_t8ss2")
 Subj = NodePath("../../../Player-E")
+Destination = NodePath("Marker3D")
 Name = "P2-04-05-T,I"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec2/P2-04/P2-04-05-T,I"]
@@ -252,4 +260,4 @@ shape = SubResource("BoxShape3D_if1qs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20088, 31.6667, 7.68577)
 
 [node name="PlatSec3-I" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 24, -31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 42, -31)
