@@ -1,7 +1,7 @@
 extends Node
 
 @export var Player: CharacterBody3D 
-@export var P301I: Area3D
+@export var P301I: StaticBody3D
 
 func _ready() -> void:
 	if Player == null or P301I == null:
@@ -10,6 +10,6 @@ func _ready() -> void:
 # Called when a body enters the area.
 func _on_area_entered(body: Node) -> void:
 	if body == Player:
-		print("Player collided with P3-01-I.")
+		print("Player collided with P3-02.")
 	else:
 		print("Collision detected with an unexpected node.")
