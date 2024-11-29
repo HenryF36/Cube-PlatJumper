@@ -9,6 +9,7 @@ Node Types:
 	I: InvisaWall
 	T: Teleport
 	De: Tp Destination
+	Im: Decal (Image)
 PlatSec:
 	Level 1:
 		1: Start Steps
