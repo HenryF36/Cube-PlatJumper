@@ -4,12 +4,12 @@ Masks:
 	3: Platform
 	4: Die
 Node Types:
-	E: Exterior
 	D: Death
 	I: InvisaWall
 	T: Teleport
 	De: Tp Destination
 	Im: Decal (Image)
+	S: Script
 PlatSec:
 	Level 1:
 		1: Start Steps
