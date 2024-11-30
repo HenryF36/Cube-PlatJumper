@@ -52,7 +52,7 @@ size = Vector3(3, 1, 3)
 [sub_resource type="BoxMesh" id="BoxMesh_demes"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x17sk"]
-size = Vector3(1, 22, 1)
+size = Vector3(1, 2, 1)
 
 [node name="Level2" type="Node3D"]
 
@@ -292,7 +292,7 @@ P301I = NodePath("../P3-01-I")
 mesh = SubResource("BoxMesh_demes")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-02-S"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_x17sk")
 
 [connection signal="body_entered" from="PlatSec3-I/P3-02-S" to="PlatSec3-I/P3-02-S" method="_on_area_entered"]

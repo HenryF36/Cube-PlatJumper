@@ -95,3 +95,8 @@ android/build/assetPacks/installTime/build.gradle
 android/build/AndroidManifest.xml
 android/build/.gdignore
 android/.build_version
+GithubKey.pub
+GithubKey
+GithubKey.pub
+GithubKey
+*.pub
