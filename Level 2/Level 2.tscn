@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bpyilnem5y0pt"]
+[gd_scene load_steps=30 format=3 uid="uid://bpyilnem5y0pt"]
 
 [ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_w611c"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_etp1k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://vkp1jdwx8x4s" path="res://Level 2/Arrow Bl Ko.png" id="9_l6tgm"]
 [ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Level 1/Trampoline.tres" id="10_rcvtg"]
 [ext_resource type="Material" path="res://Level 1/PlatMat.tres" id="11_r6e7p"]
+[ext_resource type="Script" path="res://Level 2/P302.gd" id="12_lkw7s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xx0uw"]
 size = Vector3(1, 3, 1)
@@ -47,6 +48,11 @@ size = Vector3(3, 1, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_gtsx2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bvqho"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3l41n"]
+size = Vector3(1, 3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aen5i"]
 
 [node name="Level2" type="Node3D"]
 
@@ -272,5 +278,21 @@ shape = SubResource("BoxShape3D_gtsx2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3-I/P3-01-I"]
 mesh = SubResource("BoxMesh_bvqho")
 
+[node name="P3-02" type="Area3D" parent="PlatSec3-I" node_paths=PackedStringArray("Player", "P301I")]
+transform = Transform3D(10, 0, 0, 0, 2.16216, 0, 0, 0, 8.5, 21, -3, -19)
+script = ExtResource("12_lkw7s")
+Player = NodePath("../../Player-E")
+P301I = NodePath("../P3-01-I")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-02"]
+transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 1, 0, 3.8875, 0)
+shape = SubResource("BoxShape3D_3l41n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3-I/P3-02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3125, 0)
+mesh = SubResource("BoxMesh_aen5i")
+
 [node name="P2-04-05-T,I-De" type="Marker3D" parent="PlatSec3-I"]
 transform = Transform3D(1.1, 0, 0, 0, 1.8, 0, 0, 0, 8.82, 23.5986, 56.6667, -15.4589)
+
+[connection signal="area_entered" from="PlatSec3-I/P3-02" to="PlatSec3-I/P3-02" method="_on_area_entered"]
