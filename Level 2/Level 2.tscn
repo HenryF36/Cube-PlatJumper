@@ -210,6 +210,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -112)
 transform = Transform3D(2.12132, 0, -2.82843, 0, 1, 0, 2.12132, 0, 2.82843, -3, 19, 35)
 texture_albedo = ExtResource("9_l6tgm")
 
+[node name="OmniLight3D2" type="SpotLight3D" parent="PlatSec2/P2-01-Im"]
+transform = Transform3D(0.232555, 0.23012, 0.0638286, -0.341875, 0.0859259, 0.935809, 0.157398, -0.179586, 0.0739911, -2.35702, 8, -2.47487)
+light_energy = 8.0
+spot_range = 16.0
+
+[node name="OmniLight3D3" type="SpotLight3D" parent="PlatSec2/P2-01-Im"]
+transform = Transform3D(0.232555, 0.23012, 0.0638286, -0.341875, 0.0859259, 0.935809, 0.157398, -0.179586, 0.0739911, 0.942812, 8, -9.53674e-07)
+light_energy = 8.0
+spot_range = 16.0
+
+[node name="OmniLight3D4" type="SpotLight3D" parent="PlatSec2/P2-01-Im"]
+transform = Transform3D(0.232555, 0.23012, 0.0638286, -0.341875, 0.0859259, 0.935809, 0.157398, -0.179586, 0.0739911, 3.53554, 8, 1.94454)
+light_energy = 8.0
+spot_range = 16.0
+
 [node name="P2-02-T" type="Area3D" parent="PlatSec2" node_paths=PackedStringArray("Subj", "Destination")]
 transform = Transform3D(3.84, 0, 0, 0, 1, 0, 0, 0, 2.8, -1, 0, 7)
 script = ExtResource("5_t8ss2")
@@ -275,7 +290,7 @@ shape = SubResource("BoxShape3D_if1qs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 42, -7)
 
 [node name="P3-01-I" type="StaticBody3D" parent="PlatSec3-I"]
-transform = Transform3D(91.2, 0, 0, 0, 1, 0, 0, 0, 110.432, 17, 0, -30)
+transform = Transform3D(91.2, 0, 0, 0, 1, 0, 0, 0, 110.432, 17, 0, -19)
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-01-I"]
@@ -286,10 +301,10 @@ material_override = ExtResource("2_yoeb6")
 mesh = SubResource("BoxMesh_bvqho")
 
 [node name="P2-04-05-T,I-De" type="Marker3D" parent="PlatSec3-I"]
-transform = Transform3D(1.1, 0, 0, 0, 1.8, 0, 0, 0, 8.82, 23.5986, 56.6667, -15.4589)
+transform = Transform3D(1.1, 0, 0, 0, 1.8, 0, 0, 0, 8.82, 23.5986, 56.6667, -4.4589)
 
 [node name="P3-02-S" type="Area3D" parent="PlatSec3-I" node_paths=PackedStringArray("Player", "P301I", "P302S", "P30301D", "P30302D")]
-transform = Transform3D(10.3, 0, 0, 0, 1.44, 0, 0, 0, 10.3, 26, 1, -15)
+transform = Transform3D(10.3, 0, 0, 0, 1.44, 0, 0, 0, 10.3, 26, 1, -4)
 script = ExtResource("12_gjm0f")
 Player = NodePath("../../Player")
 P301I = NodePath("../P3-01-I")
@@ -309,6 +324,7 @@ transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, 0)
 texture_albedo = ExtResource("13_6fq66")
 
 [node name="P3-03-D\'s" type="Node3D" parent="PlatSec3-I"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
 
 [node name="P3-03-01-D" type="Area3D" parent="PlatSec3-I/P3-03-D\'s"]
 transform = Transform3D(89.376, 0, 0, 0, 0.6, 0, 0, 0, 5.72, 18, 2, 17)

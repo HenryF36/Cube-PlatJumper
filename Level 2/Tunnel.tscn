@@ -101,11 +101,16 @@ mesh = SubResource("BoxMesh_3spim")
 shape = SubResource("BoxShape3D_mwwj7")
 
 [node name="P2-02" type="Decal" parent="."]
-transform = Transform3D(0.976672, -1.26264, 0, -9.38638e-09, -2.51027e-07, -2.5, 0.214735, 5.74283, -1.09278e-07, 6.5, 7, 32.75)
+transform = Transform3D(1.12348, -2.12587, 0, -1.07973e-08, -4.22647e-07, -3, 0.247013, 9.66903, -1.31134e-07, 6.5, 8, 32.75)
 layers = 4
 size = Vector3(2, 2, 5)
 texture_albedo = ExtResource("3_kwvxs")
 emission_energy = 0.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="P2-02"]
+transform = Transform3D(0.000556706, 0.00633465, -0.99998, 0.0148889, 0.169412, 0.00108152, 0.398464, -0.0350194, -8.40219e-09, -8.45759, -0.206146, 0)
+light_energy = 16.0
+spot_range = 17.0
 
 [node name="P2-03" type="Decal" parent="."]
 transform = Transform3D(6.28959, 0, 0, 0, 3.42137, 0, 0, 0, 2.5, 1.5, -1.71069, 35.75)
