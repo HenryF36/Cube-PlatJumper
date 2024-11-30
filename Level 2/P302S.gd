@@ -13,5 +13,6 @@ func _ready() -> void:
 func _on_area_entered(body: Node) -> void:
 	if body == Player:
 		print("Player collided with P3-02.")
+		P301I.visible = true
 	else:
 		print("Collision detected with an unexpected node." )

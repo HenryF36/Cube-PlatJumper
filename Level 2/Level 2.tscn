@@ -270,7 +270,8 @@ shape = SubResource("BoxShape3D_if1qs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 42, -31)
 
 [node name="P3-01-I" type="StaticBody3D" parent="PlatSec3-I"]
-transform = Transform3D(91.2, 0, 0, 0, 1, 0, 0, 0, 110.432, -1, 0, 19)
+transform = Transform3D(91.2, 0, 0, 0, 1, 0, 0, 0, 110.432, 23, 0, -50)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-01-I"]
 shape = SubResource("BoxShape3D_gtsx2")
