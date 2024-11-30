@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bpyilnem5y0pt"]
+[gd_scene load_steps=33 format=3 uid="uid://bpyilnem5y0pt"]
 
 [ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_w611c"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_etp1k"]
@@ -12,6 +12,7 @@
 [ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Level 1/Trampoline.tres" id="10_rcvtg"]
 [ext_resource type="Material" path="res://Level 1/PlatMat.tres" id="11_r6e7p"]
 [ext_resource type="Script" path="res://Level 2/P302S.gd" id="12_gjm0f"]
+[ext_resource type="Texture2D" uid="uid://etdjccbfe1j1" path="res://Level 2/Plus.png" id="13_6fq66"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xx0uw"]
 size = Vector3(1, 3, 1)
@@ -53,6 +54,10 @@ size = Vector3(3, 1, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x17sk"]
 size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cvvyq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4e4kp"]
 
 [node name="Level2" type="Node3D"]
 
@@ -191,7 +196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 visible = false
 script = ExtResource("5_t8ss2")
 Subj = NodePath("../../Player")
-Destination = NodePath("../../PlatSec3-I/P2-04-05-T,I-De")
+Destination = NodePath("../../PlatSec2/P2-02-T/P2-02-De")
 Name = "DEBUG"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec1/DEBUG-T"]
@@ -267,10 +272,10 @@ Name = "P2-04-05-T,I"
 shape = SubResource("BoxShape3D_if1qs")
 
 [node name="PlatSec3-I" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 42, -31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 42, -7)
 
 [node name="P3-01-I" type="StaticBody3D" parent="PlatSec3-I"]
-transform = Transform3D(91.2, 0, 0, 0, 1, 0, 0, 0, 110.432, 23, 0, -50)
+transform = Transform3D(91.2, 0, 0, 0, 1, 0, 0, 0, 110.432, 17, 0, -30)
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-01-I"]
@@ -283,11 +288,14 @@ mesh = SubResource("BoxMesh_bvqho")
 [node name="P2-04-05-T,I-De" type="Marker3D" parent="PlatSec3-I"]
 transform = Transform3D(1.1, 0, 0, 0, 1.8, 0, 0, 0, 8.82, 23.5986, 56.6667, -15.4589)
 
-[node name="P3-02-S" type="Area3D" parent="PlatSec3-I" node_paths=PackedStringArray("Player", "P301I")]
+[node name="P3-02-S" type="Area3D" parent="PlatSec3-I" node_paths=PackedStringArray("Player", "P301I", "P302S", "P30301D", "P30302D")]
 transform = Transform3D(10.3, 0, 0, 0, 1.44, 0, 0, 0, 10.3, 26, 1, -15)
 script = ExtResource("12_gjm0f")
 Player = NodePath("../../Player")
 P301I = NodePath("../P3-01-I")
+P302S = NodePath(".")
+P30301D = NodePath("../P3-03-D\'s/P3-03-01-D")
+P30302D = NodePath("../P3-03-D\'s/P3-03-02-D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3-I/P3-02-S"]
 mesh = SubResource("BoxMesh_demes")
@@ -295,5 +303,37 @@ mesh = SubResource("BoxMesh_demes")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-02-S"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_x17sk")
+
+[node name="Decal" type="Decal" parent="PlatSec3-I/P3-02-S"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, 0)
+texture_albedo = ExtResource("13_6fq66")
+
+[node name="P3-03-D\'s" type="Node3D" parent="PlatSec3-I"]
+
+[node name="P3-03-01-D" type="Area3D" parent="PlatSec3-I/P3-03-D\'s"]
+transform = Transform3D(89.376, 0, 0, 0, 0.6, 0, 0, 0, 5.72, 18, 2, 17)
+visible = false
+script = ExtResource("5_dr3x5")
+Nm = "P3-03-01-D"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3-I/P3-03-D\'s/P3-03-01-D"]
+material_override = ExtResource("6_ajoe2")
+mesh = SubResource("BoxMesh_cvvyq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-03-D\'s/P3-03-01-D"]
+shape = SubResource("BoxShape3D_4e4kp")
+
+[node name="P3-03-02-D" type="Area3D" parent="PlatSec3-I/P3-03-D\'s"]
+transform = Transform3D(89.376, 0, 0, 0, 0.6, 0, 0, 0, 5.72, 18, 2, 6)
+visible = false
+script = ExtResource("5_dr3x5")
+Nm = "P3-03-02-D"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlatSec3-I/P3-03-D\'s/P3-03-02-D"]
+material_override = ExtResource("6_ajoe2")
+mesh = SubResource("BoxMesh_cvvyq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatSec3-I/P3-03-D\'s/P3-03-02-D"]
+shape = SubResource("BoxShape3D_4e4kp")
 
 [connection signal="body_entered" from="PlatSec3-I/P3-02-S" to="PlatSec3-I/P3-02-S" method="_on_area_entered"]
