@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://bout6miw5ehfa"]
 
-[ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_g14sg"]
+[ext_resource type="Script" path="res://Cube Player/Player.cs" id="1_14y1k"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_u0gj4"]
 [ext_resource type="Script" path="res://GlobalRs/BottomD.gd" id="3_1gamk"]
 [ext_resource type="Material" path="res://Level 1/PlatMat.tres" id="3_ofce1"]
@@ -85,7 +85,7 @@ material = SubResource("StandardMaterial3D_idjgu")
 [node name="Player-E" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
 collision_mask = 15
-script = ExtResource("1_g14sg")
+script = ExtResource("1_14y1k")
 
 [node name="CameraPivot2" type="Marker3D" parent="Player-E"]
 transform = Transform3D(20, 0, 0, 0, 19.3185, 5.17638, 0, -5.17638, 19.3185, 0, 14, 6)

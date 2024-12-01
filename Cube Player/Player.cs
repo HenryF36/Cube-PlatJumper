@@ -1,4 +1,5 @@
 using Godot;
+
 public partial class Player : CharacterBody3D
 {
 	// How fast the player moves in meters per second.
