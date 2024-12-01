@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bpyilnem5y0pt"]
+[gd_scene load_steps=34 format=3 uid="uid://bpyilnem5y0pt"]
 
 [ext_resource type="Script" path="res://GlobalRs/Player.cs" id="1_w611c"]
 [ext_resource type="PackedScene" uid="uid://vgqxk8eyd1j1" path="res://Cube Player/Cube PlatJumper Player 2.0.tscn" id="2_etp1k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://vkp1jdwx8x4s" path="res://Level 2/Arrow Bl Ko.png" id="9_l6tgm"]
 [ext_resource type="Material" uid="uid://dpq6uirklcw3e" path="res://Level 1/Trampoline.tres" id="10_rcvtg"]
 [ext_resource type="Material" path="res://Level 1/PlatMat.tres" id="11_r6e7p"]
+[ext_resource type="Script" path="res://JoyStickT.gd" id="12_d8i8t"]
 [ext_resource type="Script" path="res://Level 2/P302S.gd" id="12_gjm0f"]
 [ext_resource type="Texture2D" uid="uid://etdjccbfe1j1" path="res://Level 2/Plus.png" id="13_6fq66"]
 
@@ -288,6 +289,7 @@ shape = SubResource("BoxShape3D_if1qs")
 
 [node name="PlatSec3-I" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 42, -7)
+script = ExtResource("12_d8i8t")
 
 [node name="P3-01-I" type="StaticBody3D" parent="PlatSec3-I"]
 transform = Transform3D(91.2, 0, 0, 0, 1, 0, 0, 0, 110.432, 17, 0, -19)
