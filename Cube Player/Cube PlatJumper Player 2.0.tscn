@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://vgqxk8eyd1j1"]
+
+[ext_resource type="Material" uid="uid://qn444yoxyhc2" path="res://Cube Player/BottomMat.tres" id="1_dymkq"]
+[ext_resource type="Material" uid="uid://1l4wlihc0f71" path="res://Cube Player/RingMat.tres" id="2_y03me"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbsb2"]
+albedo_color = Color(0.172705, 0.248082, 0.706563, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_is636"]
+material = SubResource("StandardMaterial3D_hbsb2")
+
+[sub_resource type="TorusMesh" id="TorusMesh_45pwu"]
+material = ExtResource("1_dymkq")
+
+[sub_resource type="TorusMesh" id="TorusMesh_lsrex"]
+material = ExtResource("2_y03me")
+
+[node name="Cube PlatJumper Player 2_0" type="Node3D"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Ball" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("SphereMesh_is636")
+
+[node name="Bottom" type="Node3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.4, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom"]
+mesh = SubResource("TorusMesh_45pwu")
+
+[node name="Ring" type="Node3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring"]
+mesh = SubResource("TorusMesh_lsrex")

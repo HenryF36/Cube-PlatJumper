@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://daydeo3jw20d8"]
+
+[ext_resource type="Script" path="res://Menu/DieButtons.cs" id="1_cke0i"]
+
+[sub_resource type="Theme" id="Theme_0nw46"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hlwtm"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchor_right = 1.677
+anchor_bottom = 1.936
+offset_right = 197.096
+offset_bottom = 207.472
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0nw46")
+script = ExtResource("1_cke0i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.682
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = 16.0
+offset_right = 1.02197
+color = Color(0.685733, 3.10443e-06, 5.77569e-07, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -148.0
+offset_top = 18.0
+offset_right = 1287.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 125
+text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelectButton" type="Button" parent="."]
+material = SubResource("ShaderMaterial_hlwtm")
+layout_mode = 0
+offset_left = 327.0
+offset_top = 234.0
+offset_right = 805.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 40
+text = "Level Select"
+
+[node name="MenuButton" type="Button" parent="."]
+material = SubResource("ShaderMaterial_hlwtm")
+layout_mode = 0
+offset_left = 330.0
+offset_top = 389.0
+offset_right = 808.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+
+[connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
