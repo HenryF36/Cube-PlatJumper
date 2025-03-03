@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4chxs7vvdcms"]
+
+[ext_resource type="Script" path="res://Screens/MenuButtons.cs" id="1_cw5f3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6s2t"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cw5f3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0.286275, 0.768627, 0.882353, 1)
+
+[node name="Welcome" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1145.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+text = "Welcome to Cube PlatJumper"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="By" type="Label" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 64.0
+offset_right = 492.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 20
+text = "By: Henry Fabinski using GoDot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelect" type="Button" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 168.0
+offset_right = 847.0
+offset_bottom = 430.0
+theme_override_colors/font_disabled_color = Color(0.286275, 0.768627, 0.882353, 1)
+theme_override_colors/icon_normal_color = Color(0.286275, 0.768627, 0.882353, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_o6s2t")
+text = "Level Select"
+icon_alignment = 1
+
+[connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]
